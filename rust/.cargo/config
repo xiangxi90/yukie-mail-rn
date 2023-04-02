@@ -9,3 +9,7 @@ ar = "C:/Users/kanata/AppData/Local/Android/Sdk/ndk/25.2.9519653/toolchains/llvm
 [target.i686-linux-android]
 linker = "C:/Users/kanata/AppData/Local/Android/Sdk/ndk/25.2.9519653/toolchains/llvm/prebuilt/windows-x86_64/bin/i686-linux-android33-clang.cmd"
 ar = "C:/Users/kanata/AppData/Local/Android/Sdk/ndk/25.2.9519653/toolchains/llvm/prebuilt/windows-x86_64/bin/i686-linux-android33-clang"
+
+[target.x86_64-linux-android]
+linker = "C:/Users/kanata/AppData/Local/Android/Sdk/ndk/25.2.9519653/toolchains/llvm/prebuilt/windows-x86_64/bin/x86_64-linux-android33-clang.cmd"
+ar = "C:/Users/kanata/AppData/Local/Android/Sdk/ndk/25.2.9519653/toolchains/llvm/prebuilt/windows-x86_64/bin/x86_64-linux-android33-clang"

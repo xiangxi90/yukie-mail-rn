@@ -38,7 +38,7 @@ pub mod android {
     use self::jni::JNIEnv;
 
     #[no_mangle]
-    pub unsafe extern "C" fn Java_com_mobile_1app_MobileAppBridge_helloWorld(
+    pub unsafe extern "C" fn Java_com_yukie_1mail_1rn_YukieMailBridge_helloWorld(
         mut env: JNIEnv,
         _: JClass,
         name: JString,

@@ -8,6 +8,7 @@
 import React from 'react';
 import type {PropsWithChildren} from 'react';
 import {
+  Button,
   SafeAreaView,
   ScrollView,
   StatusBar,
@@ -15,6 +16,7 @@ import {
   Text,
   useColorScheme,
   View,
+  NativeModules,
 } from 'react-native';
 
 import {
@@ -29,8 +31,23 @@ type SectionProps = PropsWithChildren<{
   title: string;
 }>;
 
+const {YukieMailBridge} = NativeModules;
+// async function displayHelloWorld(self: {
+//   setState: (arg0: {hello: any}) => void;
+// }) {
+//   try {
+//     let test = await YukieMailBridge.sayHelloWorld("Android")
+//     self.setState({
+//       hello: test,
+//     });
+//   } catch (e) {
+//     console.log(e);
+//   }
+// }
+
 function Section({children, title}: SectionProps): JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
+
   return (
     <View style={styles.sectionContainer}>
       <Text
@@ -62,6 +79,16 @@ function App(): JSX.Element {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
+  const rust_say = async () => {
+    console.log('rust');
+    try {
+      let test = await YukieMailBridge.sayHelloWorld('Android');
+      console.log('test:' + test);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
   return (
     <SafeAreaView style={backgroundStyle}>
       <StatusBar
@@ -72,6 +99,7 @@ function App(): JSX.Element {
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
         <Header />
+        <Button title="rust" onPress={() => rust_say()} />
         <View
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
