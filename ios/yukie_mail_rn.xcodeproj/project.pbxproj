@@ -14,6 +14,55 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-yukie_mail_rn-yukie_mail_rnTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-yukie_mail_rn-yukie_mail_rnTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		29645DCCE8E341938E91556F /* HarmonyOS_Sans_Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 525A9AB3811B4090965EF05A /* HarmonyOS_Sans_Black.ttf */; };
+		6034B2D0F3D946ECA965D77A /* HarmonyOS_Sans_Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A00B376A8B634A41B772A681 /* HarmonyOS_Sans_Bold.ttf */; };
+		B79A4ADC44754239BFBB7661 /* HarmonyOS_Sans_Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DCE81AAD87A44840B5A32DE3 /* HarmonyOS_Sans_Light.ttf */; };
+		67D343DC3C28408C9F363BED /* HarmonyOS_Sans_Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D2C98138BCEB4983A8BE95AC /* HarmonyOS_Sans_Medium.ttf */; };
+		C2E8F4D83E7C46CDB29F6B60 /* HarmonyOS_Sans_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF55E69F0A58480591C069BC /* HarmonyOS_Sans_Regular.ttf */; };
+		D34CC9CFA72C48EC9E765AA5 /* HarmonyOS_Sans_Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 54E3736080144AF7B4AB3438 /* HarmonyOS_Sans_Thin.ttf */; };
+		D005FC28E1C841FFA33F5F83 /* HarmonyOS_Sans_Condensed_Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5ED1475BA4204C77AC5BF92E /* HarmonyOS_Sans_Condensed_Black.ttf */; };
+		94DE214A82604B159BBC8A1B /* HarmonyOS_Sans_Condensed_Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 92E86B38598943E0AA434C1F /* HarmonyOS_Sans_Condensed_Bold.ttf */; };
+		49C04824820049919C409223 /* HarmonyOS_Sans_Condensed_Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DA0509E19FB34E0AAD45C3F4 /* HarmonyOS_Sans_Condensed_Light.ttf */; };
+		65941EDB67F740FBA68F1703 /* HarmonyOS_Sans_Condensed_Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A96B824849904F92A795D176 /* HarmonyOS_Sans_Condensed_Medium.ttf */; };
+		843BE0EBDD5D4313BB8C4A70 /* HarmonyOS_Sans_Condensed_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 45A692D023714D639A6B10C7 /* HarmonyOS_Sans_Condensed_Regular.ttf */; };
+		7E65BEF4B80B4B71AC4A293D /* HarmonyOS_Sans_Condensed_Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B1BE3A8170B54B179BCE9E44 /* HarmonyOS_Sans_Condensed_Thin.ttf */; };
+		0BF5D653660D4448BF4D1852 /* HarmonyOS_Sans_Condensed_Black_Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E40E87420CDA4C83B41F6839 /* HarmonyOS_Sans_Condensed_Black_Italic.ttf */; };
+		EF095AD0805E411980A0ACF8 /* HarmonyOS_Sans_Condensed_Bold_Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A5805119CE44107B3EBAD13 /* HarmonyOS_Sans_Condensed_Bold_Italic.ttf */; };
+		8229590436AD45CFBCE30367 /* HarmonyOS_Sans_Condensed_Light_Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 68CD9A1E6AE34FF1BC1E6707 /* HarmonyOS_Sans_Condensed_Light_Italic.ttf */; };
+		E92FF7FB47B44300BDFAB2E7 /* HarmonyOS_Sans_Condensed_Medium_Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 415590820A41472185EFA530 /* HarmonyOS_Sans_Condensed_Medium_Italic.ttf */; };
+		5C08990E59E14D2E92D0CFAF /* HarmonyOS_Sans_Condensed_Regular_Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1E867808597C4E59BDF1A4EE /* HarmonyOS_Sans_Condensed_Regular_Italic.ttf */; };
+		7AA615114AF0497FB370DE77 /* HarmonyOS_Sans_Condensed_Thin_Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 288F446368FF465A9F2F480E /* HarmonyOS_Sans_Condensed_Thin_Italic.ttf */; };
+		CF9B01A2E47E44CE844B9819 /* HarmonyOS_Sans_Black_Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 22CFC10914F8451BB7B61F1C /* HarmonyOS_Sans_Black_Italic.ttf */; };
+		A506A0F1152F4BC0B175A148 /* HarmonyOS_Sans_Bold_Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1CC8E6D524FB4BFD88530A0B /* HarmonyOS_Sans_Bold_Italic.ttf */; };
+		15D6F7C6DB784CEE9DE549B5 /* HarmonyOS_Sans_Light_Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EA4CAA73B4B1448BB2C0EF87 /* HarmonyOS_Sans_Light_Italic.ttf */; };
+		25B5987160D440FCA00A8FD9 /* HarmonyOS_Sans_Medium_Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3B8C215A734A4C9E827D4BC4 /* HarmonyOS_Sans_Medium_Italic.ttf */; };
+		7560E2068FD446A6A3A96D72 /* HarmonyOS_Sans_Regular_Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0BBCD95C089B42A0A8E2CC45 /* HarmonyOS_Sans_Regular_Italic.ttf */; };
+		0149DE0ECB9C4C3C9A1D24E5 /* HarmonyOS_Sans_Thin_Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 668D499D752B490197EF1FAB /* HarmonyOS_Sans_Thin_Italic.ttf */; };
+		C38A072F6CE24A3F9E81BA4E /* HarmonyOS_Sans_Naskh_Arabic_Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1F84703B7DDE41708819F47C /* HarmonyOS_Sans_Naskh_Arabic_Black.ttf */; };
+		BF44D575082043039DAFAC06 /* HarmonyOS_Sans_Naskh_Arabic_Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FD2F8549C574C01B6932BFB /* HarmonyOS_Sans_Naskh_Arabic_Bold.ttf */; };
+		C3E7E939F04F4D5E8AFCF75B /* HarmonyOS_Sans_Naskh_Arabic_Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5E9B42190359412F9FFF5A7E /* HarmonyOS_Sans_Naskh_Arabic_Light.ttf */; };
+		E5814CB07FD9480888C50540 /* HarmonyOS_Sans_Naskh_Arabic_Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 74A46D5B32FA417E8BED8D04 /* HarmonyOS_Sans_Naskh_Arabic_Medium.ttf */; };
+		5A75F147767D423EB607C0F7 /* HarmonyOS_Sans_Naskh_Arabic_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 44BDDA38AD0A47439D637CFA /* HarmonyOS_Sans_Naskh_Arabic_Regular.ttf */; };
+		FAE370239B2A47CB8CC70934 /* HarmonyOS_Sans_Naskh_Arabic_Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E23A67B01B21469CA7AEACE8 /* HarmonyOS_Sans_Naskh_Arabic_Thin.ttf */; };
+		881613A44252433182CEC529 /* HarmonyOS_Sans_Naskh_Arabic_UI_Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A7536D1C6494F4B882D3130 /* HarmonyOS_Sans_Naskh_Arabic_UI_Black.ttf */; };
+		6E5F862F907D4EF49AE09FA6 /* HarmonyOS_Sans_Naskh_Arabic_UI_Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67881CEDBE284ECEAE73B90D /* HarmonyOS_Sans_Naskh_Arabic_UI_Bold.ttf */; };
+		D3ECCD7A560D44B892ABAA14 /* HarmonyOS_Sans_Naskh_Arabic_UI_Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E2F84C681A4B45C6B0EEE389 /* HarmonyOS_Sans_Naskh_Arabic_UI_Light.ttf */; };
+		82F1CE3253A94E0792C3171D /* HarmonyOS_Sans_Naskh_Arabic_UI_Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC97580CDDE64A20B3EE8BC6 /* HarmonyOS_Sans_Naskh_Arabic_UI_Medium.ttf */; };
+		40AE8E7F59494AE1A0695C24 /* HarmonyOS_Sans_Naskh_Arabic_UI_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BC757E821FD54C1EA5DAE16D /* HarmonyOS_Sans_Naskh_Arabic_UI_Regular.ttf */; };
+		07FBCC16D49C41D48B9F9780 /* HarmonyOS_Sans_Naskh_Arabic_UI_Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B6CC67830324494EB9E809D5 /* HarmonyOS_Sans_Naskh_Arabic_UI_Thin.ttf */; };
+		CE779303D69846AF9EDF6275 /* HarmonyOS_Sans_SC_Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C3C055D27B674DCE9043F7F5 /* HarmonyOS_Sans_SC_Black.ttf */; };
+		1788AC80F5B44DF88FB29211 /* HarmonyOS_Sans_SC_Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC30A868CC3E410A94527180 /* HarmonyOS_Sans_SC_Bold.ttf */; };
+		140D11AE47AD4FFB899F6C4E /* HarmonyOS_Sans_SC_Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FECAA5CF719848A186606DA6 /* HarmonyOS_Sans_SC_Light.ttf */; };
+		1F6AEE1DC57444A1A03AA597 /* HarmonyOS_Sans_SC_Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C29DA224322446C5BE1F0FD5 /* HarmonyOS_Sans_SC_Medium.ttf */; };
+		C88BDF5012A849FDA7E11B38 /* HarmonyOS_Sans_SC_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 94ECF3633E8543E7BF420C40 /* HarmonyOS_Sans_SC_Regular.ttf */; };
+		22E4F6867649460C843C797C /* HarmonyOS_Sans_SC_Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A061EB167B2E4A1FAD12B87B /* HarmonyOS_Sans_SC_Thin.ttf */; };
+		0E8807E0DA8047F89332AD2D /* HarmonyOS_Sans_TC_Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7AB54A393BB44A60B49DBCB0 /* HarmonyOS_Sans_TC_Black.ttf */; };
+		B340898A75C54C8F8818E76B /* HarmonyOS_Sans_TC_Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC2B994FCC9243DF973EB09A /* HarmonyOS_Sans_TC_Bold.ttf */; };
+		ED502594EFEE4241B34CC0F9 /* HarmonyOS_Sans_TC_Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F5186E53C14B41F9B1E6083A /* HarmonyOS_Sans_TC_Light.ttf */; };
+		7C48A623E87348ECAA2ACD39 /* HarmonyOS_Sans_TC_Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D1B67C42BEFF433A9F842DB7 /* HarmonyOS_Sans_TC_Medium.ttf */; };
+		19A6729ECD84446896114413 /* HarmonyOS_Sans_TC_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BFE23CF61B634CCF80051DF8 /* HarmonyOS_Sans_TC_Regular.ttf */; };
+		F9241E8C52054D2399937FCF /* HarmonyOS_Sans_TC_Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2570F9DCE0D44EE8B456F405 /* HarmonyOS_Sans_TC_Thin.ttf */; };
+		8079A24F5A5B4C45BC0EAE20 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7526A33C8D3441E0A451B230 /* LICENSE.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +93,55 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = yukie_mail_rn/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-yukie_mail_rn-yukie_mail_rnTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-yukie_mail_rn-yukie_mail_rnTests.release.xcconfig"; path = "Target Support Files/Pods-yukie_mail_rn-yukie_mail_rnTests/Pods-yukie_mail_rn-yukie_mail_rnTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		525A9AB3811B4090965EF05A /* HarmonyOS_Sans_Black.ttf */ = {isa = PBXFileReference; name = "HarmonyOS_Sans_Black.ttf"; path = "../assets/fonts/HarmonyOS Sans/HarmonyOS_Sans/HarmonyOS_Sans_Black.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A00B376A8B634A41B772A681 /* HarmonyOS_Sans_Bold.ttf */ = {isa = PBXFileReference; name = "HarmonyOS_Sans_Bold.ttf"; path = "../assets/fonts/HarmonyOS Sans/HarmonyOS_Sans/HarmonyOS_Sans_Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		DCE81AAD87A44840B5A32DE3 /* HarmonyOS_Sans_Light.ttf */ = {isa = PBXFileReference; name = "HarmonyOS_Sans_Light.ttf"; path = "../assets/fonts/HarmonyOS Sans/HarmonyOS_Sans/HarmonyOS_Sans_Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D2C98138BCEB4983A8BE95AC /* HarmonyOS_Sans_Medium.ttf */ = {isa = PBXFileReference; name = "HarmonyOS_Sans_Medium.ttf"; path = "../assets/fonts/HarmonyOS Sans/HarmonyOS_Sans/HarmonyOS_Sans_Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		AF55E69F0A58480591C069BC /* HarmonyOS_Sans_Regular.ttf */ = {isa = PBXFileReference; name = "HarmonyOS_Sans_Regular.ttf"; path = "../assets/fonts/HarmonyOS Sans/HarmonyOS_Sans/HarmonyOS_Sans_Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		54E3736080144AF7B4AB3438 /* HarmonyOS_Sans_Thin.ttf */ = {isa = PBXFileReference; name = "HarmonyOS_Sans_Thin.ttf"; path = "../assets/fonts/HarmonyOS Sans/HarmonyOS_Sans/HarmonyOS_Sans_Thin.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5ED1475BA4204C77AC5BF92E /* HarmonyOS_Sans_Condensed_Black.ttf */ = {isa = PBXFileReference; name = "HarmonyOS_Sans_Condensed_Black.ttf"; path = "../assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_Condensed/HarmonyOS_Sans_Condensed_Black.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		92E86B38598943E0AA434C1F /* HarmonyOS_Sans_Condensed_Bold.ttf */ = {isa = PBXFileReference; name = "HarmonyOS_Sans_Condensed_Bold.ttf"; path = "../assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_Condensed/HarmonyOS_Sans_Condensed_Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		DA0509E19FB34E0AAD45C3F4 /* HarmonyOS_Sans_Condensed_Light.ttf */ = {isa = PBXFileReference; name = "HarmonyOS_Sans_Condensed_Light.ttf"; path = "../assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_Condensed/HarmonyOS_Sans_Condensed_Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A96B824849904F92A795D176 /* HarmonyOS_Sans_Condensed_Medium.ttf */ = {isa = PBXFileReference; name = "HarmonyOS_Sans_Condensed_Medium.ttf"; path = "../assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_Condensed/HarmonyOS_Sans_Condensed_Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		45A692D023714D639A6B10C7 /* HarmonyOS_Sans_Condensed_Regular.ttf */ = {isa = PBXFileReference; name = "HarmonyOS_Sans_Condensed_Regular.ttf"; path = "../assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_Condensed/HarmonyOS_Sans_Condensed_Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B1BE3A8170B54B179BCE9E44 /* HarmonyOS_Sans_Condensed_Thin.ttf */ = {isa = PBXFileReference; name = "HarmonyOS_Sans_Condensed_Thin.ttf"; path = "../assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_Condensed/HarmonyOS_Sans_Condensed_Thin.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E40E87420CDA4C83B41F6839 /* HarmonyOS_Sans_Condensed_Black_Italic.ttf */ = {isa = PBXFileReference; name = "HarmonyOS_Sans_Condensed_Black_Italic.ttf"; path = "../assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_Condensed_Italic/HarmonyOS_Sans_Condensed_Black_Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		4A5805119CE44107B3EBAD13 /* HarmonyOS_Sans_Condensed_Bold_Italic.ttf */ = {isa = PBXFileReference; name = "HarmonyOS_Sans_Condensed_Bold_Italic.ttf"; path = "../assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_Condensed_Italic/HarmonyOS_Sans_Condensed_Bold_Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		68CD9A1E6AE34FF1BC1E6707 /* HarmonyOS_Sans_Condensed_Light_Italic.ttf */ = {isa = PBXFileReference; name = "HarmonyOS_Sans_Condensed_Light_Italic.ttf"; path = "../assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_Condensed_Italic/HarmonyOS_Sans_Condensed_Light_Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		415590820A41472185EFA530 /* HarmonyOS_Sans_Condensed_Medium_Italic.ttf */ = {isa = PBXFileReference; name = "HarmonyOS_Sans_Condensed_Medium_Italic.ttf"; path = "../assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_Condensed_Italic/HarmonyOS_Sans_Condensed_Medium_Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		1E867808597C4E59BDF1A4EE /* HarmonyOS_Sans_Condensed_Regular_Italic.ttf */ = {isa = PBXFileReference; name = "HarmonyOS_Sans_Condensed_Regular_Italic.ttf"; path = "../assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_Condensed_Italic/HarmonyOS_Sans_Condensed_Regular_Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		288F446368FF465A9F2F480E /* HarmonyOS_Sans_Condensed_Thin_Italic.ttf */ = {isa = PBXFileReference; name = "HarmonyOS_Sans_Condensed_Thin_Italic.ttf"; path = "../assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_Condensed_Italic/HarmonyOS_Sans_Condensed_Thin_Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		22CFC10914F8451BB7B61F1C /* HarmonyOS_Sans_Black_Italic.ttf */ = {isa = PBXFileReference; name = "HarmonyOS_Sans_Black_Italic.ttf"; path = "../assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_Italic/HarmonyOS_Sans_Black_Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		1CC8E6D524FB4BFD88530A0B /* HarmonyOS_Sans_Bold_Italic.ttf */ = {isa = PBXFileReference; name = "HarmonyOS_Sans_Bold_Italic.ttf"; path = "../assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_Italic/HarmonyOS_Sans_Bold_Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		EA4CAA73B4B1448BB2C0EF87 /* HarmonyOS_Sans_Light_Italic.ttf */ = {isa = PBXFileReference; name = "HarmonyOS_Sans_Light_Italic.ttf"; path = "../assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_Italic/HarmonyOS_Sans_Light_Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		3B8C215A734A4C9E827D4BC4 /* HarmonyOS_Sans_Medium_Italic.ttf */ = {isa = PBXFileReference; name = "HarmonyOS_Sans_Medium_Italic.ttf"; path = "../assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_Italic/HarmonyOS_Sans_Medium_Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		0BBCD95C089B42A0A8E2CC45 /* HarmonyOS_Sans_Regular_Italic.ttf */ = {isa = PBXFileReference; name = "HarmonyOS_Sans_Regular_Italic.ttf"; path = "../assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_Italic/HarmonyOS_Sans_Regular_Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		668D499D752B490197EF1FAB /* HarmonyOS_Sans_Thin_Italic.ttf */ = {isa = PBXFileReference; name = "HarmonyOS_Sans_Thin_Italic.ttf"; path = "../assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_Italic/HarmonyOS_Sans_Thin_Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		1F84703B7DDE41708819F47C /* HarmonyOS_Sans_Naskh_Arabic_Black.ttf */ = {isa = PBXFileReference; name = "HarmonyOS_Sans_Naskh_Arabic_Black.ttf"; path = "../assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_Naskh_Arabic/HarmonyOS_Sans_Naskh_Arabic_Black.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		4FD2F8549C574C01B6932BFB /* HarmonyOS_Sans_Naskh_Arabic_Bold.ttf */ = {isa = PBXFileReference; name = "HarmonyOS_Sans_Naskh_Arabic_Bold.ttf"; path = "../assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_Naskh_Arabic/HarmonyOS_Sans_Naskh_Arabic_Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5E9B42190359412F9FFF5A7E /* HarmonyOS_Sans_Naskh_Arabic_Light.ttf */ = {isa = PBXFileReference; name = "HarmonyOS_Sans_Naskh_Arabic_Light.ttf"; path = "../assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_Naskh_Arabic/HarmonyOS_Sans_Naskh_Arabic_Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		74A46D5B32FA417E8BED8D04 /* HarmonyOS_Sans_Naskh_Arabic_Medium.ttf */ = {isa = PBXFileReference; name = "HarmonyOS_Sans_Naskh_Arabic_Medium.ttf"; path = "../assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_Naskh_Arabic/HarmonyOS_Sans_Naskh_Arabic_Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		44BDDA38AD0A47439D637CFA /* HarmonyOS_Sans_Naskh_Arabic_Regular.ttf */ = {isa = PBXFileReference; name = "HarmonyOS_Sans_Naskh_Arabic_Regular.ttf"; path = "../assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_Naskh_Arabic/HarmonyOS_Sans_Naskh_Arabic_Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E23A67B01B21469CA7AEACE8 /* HarmonyOS_Sans_Naskh_Arabic_Thin.ttf */ = {isa = PBXFileReference; name = "HarmonyOS_Sans_Naskh_Arabic_Thin.ttf"; path = "../assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_Naskh_Arabic/HarmonyOS_Sans_Naskh_Arabic_Thin.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		4A7536D1C6494F4B882D3130 /* HarmonyOS_Sans_Naskh_Arabic_UI_Black.ttf */ = {isa = PBXFileReference; name = "HarmonyOS_Sans_Naskh_Arabic_UI_Black.ttf"; path = "../assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_Naskh_Arabic_UI/HarmonyOS_Sans_Naskh_Arabic_UI_Black.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		67881CEDBE284ECEAE73B90D /* HarmonyOS_Sans_Naskh_Arabic_UI_Bold.ttf */ = {isa = PBXFileReference; name = "HarmonyOS_Sans_Naskh_Arabic_UI_Bold.ttf"; path = "../assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_Naskh_Arabic_UI/HarmonyOS_Sans_Naskh_Arabic_UI_Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E2F84C681A4B45C6B0EEE389 /* HarmonyOS_Sans_Naskh_Arabic_UI_Light.ttf */ = {isa = PBXFileReference; name = "HarmonyOS_Sans_Naskh_Arabic_UI_Light.ttf"; path = "../assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_Naskh_Arabic_UI/HarmonyOS_Sans_Naskh_Arabic_UI_Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		FC97580CDDE64A20B3EE8BC6 /* HarmonyOS_Sans_Naskh_Arabic_UI_Medium.ttf */ = {isa = PBXFileReference; name = "HarmonyOS_Sans_Naskh_Arabic_UI_Medium.ttf"; path = "../assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_Naskh_Arabic_UI/HarmonyOS_Sans_Naskh_Arabic_UI_Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		BC757E821FD54C1EA5DAE16D /* HarmonyOS_Sans_Naskh_Arabic_UI_Regular.ttf */ = {isa = PBXFileReference; name = "HarmonyOS_Sans_Naskh_Arabic_UI_Regular.ttf"; path = "../assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_Naskh_Arabic_UI/HarmonyOS_Sans_Naskh_Arabic_UI_Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B6CC67830324494EB9E809D5 /* HarmonyOS_Sans_Naskh_Arabic_UI_Thin.ttf */ = {isa = PBXFileReference; name = "HarmonyOS_Sans_Naskh_Arabic_UI_Thin.ttf"; path = "../assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_Naskh_Arabic_UI/HarmonyOS_Sans_Naskh_Arabic_UI_Thin.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C3C055D27B674DCE9043F7F5 /* HarmonyOS_Sans_SC_Black.ttf */ = {isa = PBXFileReference; name = "HarmonyOS_Sans_SC_Black.ttf"; path = "../assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_SC/HarmonyOS_Sans_SC_Black.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		AC30A868CC3E410A94527180 /* HarmonyOS_Sans_SC_Bold.ttf */ = {isa = PBXFileReference; name = "HarmonyOS_Sans_SC_Bold.ttf"; path = "../assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_SC/HarmonyOS_Sans_SC_Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		FECAA5CF719848A186606DA6 /* HarmonyOS_Sans_SC_Light.ttf */ = {isa = PBXFileReference; name = "HarmonyOS_Sans_SC_Light.ttf"; path = "../assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_SC/HarmonyOS_Sans_SC_Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C29DA224322446C5BE1F0FD5 /* HarmonyOS_Sans_SC_Medium.ttf */ = {isa = PBXFileReference; name = "HarmonyOS_Sans_SC_Medium.ttf"; path = "../assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_SC/HarmonyOS_Sans_SC_Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		94ECF3633E8543E7BF420C40 /* HarmonyOS_Sans_SC_Regular.ttf */ = {isa = PBXFileReference; name = "HarmonyOS_Sans_SC_Regular.ttf"; path = "../assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_SC/HarmonyOS_Sans_SC_Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A061EB167B2E4A1FAD12B87B /* HarmonyOS_Sans_SC_Thin.ttf */ = {isa = PBXFileReference; name = "HarmonyOS_Sans_SC_Thin.ttf"; path = "../assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_SC/HarmonyOS_Sans_SC_Thin.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7AB54A393BB44A60B49DBCB0 /* HarmonyOS_Sans_TC_Black.ttf */ = {isa = PBXFileReference; name = "HarmonyOS_Sans_TC_Black.ttf"; path = "../assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_TC/HarmonyOS_Sans_TC_Black.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		AC2B994FCC9243DF973EB09A /* HarmonyOS_Sans_TC_Bold.ttf */ = {isa = PBXFileReference; name = "HarmonyOS_Sans_TC_Bold.ttf"; path = "../assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_TC/HarmonyOS_Sans_TC_Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F5186E53C14B41F9B1E6083A /* HarmonyOS_Sans_TC_Light.ttf */ = {isa = PBXFileReference; name = "HarmonyOS_Sans_TC_Light.ttf"; path = "../assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_TC/HarmonyOS_Sans_TC_Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D1B67C42BEFF433A9F842DB7 /* HarmonyOS_Sans_TC_Medium.ttf */ = {isa = PBXFileReference; name = "HarmonyOS_Sans_TC_Medium.ttf"; path = "../assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_TC/HarmonyOS_Sans_TC_Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		BFE23CF61B634CCF80051DF8 /* HarmonyOS_Sans_TC_Regular.ttf */ = {isa = PBXFileReference; name = "HarmonyOS_Sans_TC_Regular.ttf"; path = "../assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_TC/HarmonyOS_Sans_TC_Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		2570F9DCE0D44EE8B456F405 /* HarmonyOS_Sans_TC_Thin.ttf */ = {isa = PBXFileReference; name = "HarmonyOS_Sans_TC_Thin.ttf"; path = "../assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_TC/HarmonyOS_Sans_TC_Thin.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7526A33C8D3441E0A451B230 /* LICENSE.txt */ = {isa = PBXFileReference; name = "LICENSE.txt"; path = "../assets/fonts/HarmonyOS Sans/HarmonyOS_Sans/LICENSE.txt"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +220,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				7187E66AA8DB470FBE9630BD /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -147,6 +246,63 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		7187E66AA8DB470FBE9630BD /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				525A9AB3811B4090965EF05A /* HarmonyOS_Sans_Black.ttf */,
+				A00B376A8B634A41B772A681 /* HarmonyOS_Sans_Bold.ttf */,
+				DCE81AAD87A44840B5A32DE3 /* HarmonyOS_Sans_Light.ttf */,
+				D2C98138BCEB4983A8BE95AC /* HarmonyOS_Sans_Medium.ttf */,
+				AF55E69F0A58480591C069BC /* HarmonyOS_Sans_Regular.ttf */,
+				54E3736080144AF7B4AB3438 /* HarmonyOS_Sans_Thin.ttf */,
+				5ED1475BA4204C77AC5BF92E /* HarmonyOS_Sans_Condensed_Black.ttf */,
+				92E86B38598943E0AA434C1F /* HarmonyOS_Sans_Condensed_Bold.ttf */,
+				DA0509E19FB34E0AAD45C3F4 /* HarmonyOS_Sans_Condensed_Light.ttf */,
+				A96B824849904F92A795D176 /* HarmonyOS_Sans_Condensed_Medium.ttf */,
+				45A692D023714D639A6B10C7 /* HarmonyOS_Sans_Condensed_Regular.ttf */,
+				B1BE3A8170B54B179BCE9E44 /* HarmonyOS_Sans_Condensed_Thin.ttf */,
+				E40E87420CDA4C83B41F6839 /* HarmonyOS_Sans_Condensed_Black_Italic.ttf */,
+				4A5805119CE44107B3EBAD13 /* HarmonyOS_Sans_Condensed_Bold_Italic.ttf */,
+				68CD9A1E6AE34FF1BC1E6707 /* HarmonyOS_Sans_Condensed_Light_Italic.ttf */,
+				415590820A41472185EFA530 /* HarmonyOS_Sans_Condensed_Medium_Italic.ttf */,
+				1E867808597C4E59BDF1A4EE /* HarmonyOS_Sans_Condensed_Regular_Italic.ttf */,
+				288F446368FF465A9F2F480E /* HarmonyOS_Sans_Condensed_Thin_Italic.ttf */,
+				22CFC10914F8451BB7B61F1C /* HarmonyOS_Sans_Black_Italic.ttf */,
+				1CC8E6D524FB4BFD88530A0B /* HarmonyOS_Sans_Bold_Italic.ttf */,
+				EA4CAA73B4B1448BB2C0EF87 /* HarmonyOS_Sans_Light_Italic.ttf */,
+				3B8C215A734A4C9E827D4BC4 /* HarmonyOS_Sans_Medium_Italic.ttf */,
+				0BBCD95C089B42A0A8E2CC45 /* HarmonyOS_Sans_Regular_Italic.ttf */,
+				668D499D752B490197EF1FAB /* HarmonyOS_Sans_Thin_Italic.ttf */,
+				1F84703B7DDE41708819F47C /* HarmonyOS_Sans_Naskh_Arabic_Black.ttf */,
+				4FD2F8549C574C01B6932BFB /* HarmonyOS_Sans_Naskh_Arabic_Bold.ttf */,
+				5E9B42190359412F9FFF5A7E /* HarmonyOS_Sans_Naskh_Arabic_Light.ttf */,
+				74A46D5B32FA417E8BED8D04 /* HarmonyOS_Sans_Naskh_Arabic_Medium.ttf */,
+				44BDDA38AD0A47439D637CFA /* HarmonyOS_Sans_Naskh_Arabic_Regular.ttf */,
+				E23A67B01B21469CA7AEACE8 /* HarmonyOS_Sans_Naskh_Arabic_Thin.ttf */,
+				4A7536D1C6494F4B882D3130 /* HarmonyOS_Sans_Naskh_Arabic_UI_Black.ttf */,
+				67881CEDBE284ECEAE73B90D /* HarmonyOS_Sans_Naskh_Arabic_UI_Bold.ttf */,
+				E2F84C681A4B45C6B0EEE389 /* HarmonyOS_Sans_Naskh_Arabic_UI_Light.ttf */,
+				FC97580CDDE64A20B3EE8BC6 /* HarmonyOS_Sans_Naskh_Arabic_UI_Medium.ttf */,
+				BC757E821FD54C1EA5DAE16D /* HarmonyOS_Sans_Naskh_Arabic_UI_Regular.ttf */,
+				B6CC67830324494EB9E809D5 /* HarmonyOS_Sans_Naskh_Arabic_UI_Thin.ttf */,
+				C3C055D27B674DCE9043F7F5 /* HarmonyOS_Sans_SC_Black.ttf */,
+				AC30A868CC3E410A94527180 /* HarmonyOS_Sans_SC_Bold.ttf */,
+				FECAA5CF719848A186606DA6 /* HarmonyOS_Sans_SC_Light.ttf */,
+				C29DA224322446C5BE1F0FD5 /* HarmonyOS_Sans_SC_Medium.ttf */,
+				94ECF3633E8543E7BF420C40 /* HarmonyOS_Sans_SC_Regular.ttf */,
+				A061EB167B2E4A1FAD12B87B /* HarmonyOS_Sans_SC_Thin.ttf */,
+				7AB54A393BB44A60B49DBCB0 /* HarmonyOS_Sans_TC_Black.ttf */,
+				AC2B994FCC9243DF973EB09A /* HarmonyOS_Sans_TC_Bold.ttf */,
+				F5186E53C14B41F9B1E6083A /* HarmonyOS_Sans_TC_Light.ttf */,
+				D1B67C42BEFF433A9F842DB7 /* HarmonyOS_Sans_TC_Medium.ttf */,
+				BFE23CF61B634CCF80051DF8 /* HarmonyOS_Sans_TC_Regular.ttf */,
+				2570F9DCE0D44EE8B456F405 /* HarmonyOS_Sans_TC_Thin.ttf */,
+				7526A33C8D3441E0A451B230 /* LICENSE.txt */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -244,6 +400,55 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				29645DCCE8E341938E91556F /* HarmonyOS_Sans_Black.ttf in Resources */,
+				6034B2D0F3D946ECA965D77A /* HarmonyOS_Sans_Bold.ttf in Resources */,
+				B79A4ADC44754239BFBB7661 /* HarmonyOS_Sans_Light.ttf in Resources */,
+				67D343DC3C28408C9F363BED /* HarmonyOS_Sans_Medium.ttf in Resources */,
+				C2E8F4D83E7C46CDB29F6B60 /* HarmonyOS_Sans_Regular.ttf in Resources */,
+				D34CC9CFA72C48EC9E765AA5 /* HarmonyOS_Sans_Thin.ttf in Resources */,
+				D005FC28E1C841FFA33F5F83 /* HarmonyOS_Sans_Condensed_Black.ttf in Resources */,
+				94DE214A82604B159BBC8A1B /* HarmonyOS_Sans_Condensed_Bold.ttf in Resources */,
+				49C04824820049919C409223 /* HarmonyOS_Sans_Condensed_Light.ttf in Resources */,
+				65941EDB67F740FBA68F1703 /* HarmonyOS_Sans_Condensed_Medium.ttf in Resources */,
+				843BE0EBDD5D4313BB8C4A70 /* HarmonyOS_Sans_Condensed_Regular.ttf in Resources */,
+				7E65BEF4B80B4B71AC4A293D /* HarmonyOS_Sans_Condensed_Thin.ttf in Resources */,
+				0BF5D653660D4448BF4D1852 /* HarmonyOS_Sans_Condensed_Black_Italic.ttf in Resources */,
+				EF095AD0805E411980A0ACF8 /* HarmonyOS_Sans_Condensed_Bold_Italic.ttf in Resources */,
+				8229590436AD45CFBCE30367 /* HarmonyOS_Sans_Condensed_Light_Italic.ttf in Resources */,
+				E92FF7FB47B44300BDFAB2E7 /* HarmonyOS_Sans_Condensed_Medium_Italic.ttf in Resources */,
+				5C08990E59E14D2E92D0CFAF /* HarmonyOS_Sans_Condensed_Regular_Italic.ttf in Resources */,
+				7AA615114AF0497FB370DE77 /* HarmonyOS_Sans_Condensed_Thin_Italic.ttf in Resources */,
+				CF9B01A2E47E44CE844B9819 /* HarmonyOS_Sans_Black_Italic.ttf in Resources */,
+				A506A0F1152F4BC0B175A148 /* HarmonyOS_Sans_Bold_Italic.ttf in Resources */,
+				15D6F7C6DB784CEE9DE549B5 /* HarmonyOS_Sans_Light_Italic.ttf in Resources */,
+				25B5987160D440FCA00A8FD9 /* HarmonyOS_Sans_Medium_Italic.ttf in Resources */,
+				7560E2068FD446A6A3A96D72 /* HarmonyOS_Sans_Regular_Italic.ttf in Resources */,
+				0149DE0ECB9C4C3C9A1D24E5 /* HarmonyOS_Sans_Thin_Italic.ttf in Resources */,
+				C38A072F6CE24A3F9E81BA4E /* HarmonyOS_Sans_Naskh_Arabic_Black.ttf in Resources */,
+				BF44D575082043039DAFAC06 /* HarmonyOS_Sans_Naskh_Arabic_Bold.ttf in Resources */,
+				C3E7E939F04F4D5E8AFCF75B /* HarmonyOS_Sans_Naskh_Arabic_Light.ttf in Resources */,
+				E5814CB07FD9480888C50540 /* HarmonyOS_Sans_Naskh_Arabic_Medium.ttf in Resources */,
+				5A75F147767D423EB607C0F7 /* HarmonyOS_Sans_Naskh_Arabic_Regular.ttf in Resources */,
+				FAE370239B2A47CB8CC70934 /* HarmonyOS_Sans_Naskh_Arabic_Thin.ttf in Resources */,
+				881613A44252433182CEC529 /* HarmonyOS_Sans_Naskh_Arabic_UI_Black.ttf in Resources */,
+				6E5F862F907D4EF49AE09FA6 /* HarmonyOS_Sans_Naskh_Arabic_UI_Bold.ttf in Resources */,
+				D3ECCD7A560D44B892ABAA14 /* HarmonyOS_Sans_Naskh_Arabic_UI_Light.ttf in Resources */,
+				82F1CE3253A94E0792C3171D /* HarmonyOS_Sans_Naskh_Arabic_UI_Medium.ttf in Resources */,
+				40AE8E7F59494AE1A0695C24 /* HarmonyOS_Sans_Naskh_Arabic_UI_Regular.ttf in Resources */,
+				07FBCC16D49C41D48B9F9780 /* HarmonyOS_Sans_Naskh_Arabic_UI_Thin.ttf in Resources */,
+				CE779303D69846AF9EDF6275 /* HarmonyOS_Sans_SC_Black.ttf in Resources */,
+				1788AC80F5B44DF88FB29211 /* HarmonyOS_Sans_SC_Bold.ttf in Resources */,
+				140D11AE47AD4FFB899F6C4E /* HarmonyOS_Sans_SC_Light.ttf in Resources */,
+				1F6AEE1DC57444A1A03AA597 /* HarmonyOS_Sans_SC_Medium.ttf in Resources */,
+				C88BDF5012A849FDA7E11B38 /* HarmonyOS_Sans_SC_Regular.ttf in Resources */,
+				22E4F6867649460C843C797C /* HarmonyOS_Sans_SC_Thin.ttf in Resources */,
+				0E8807E0DA8047F89332AD2D /* HarmonyOS_Sans_TC_Black.ttf in Resources */,
+				B340898A75C54C8F8818E76B /* HarmonyOS_Sans_TC_Bold.ttf in Resources */,
+				ED502594EFEE4241B34CC0F9 /* HarmonyOS_Sans_TC_Light.ttf in Resources */,
+				7C48A623E87348ECAA2ACD39 /* HarmonyOS_Sans_TC_Medium.ttf in Resources */,
+				19A6729ECD84446896114413 /* HarmonyOS_Sans_TC_Regular.ttf in Resources */,
+				F9241E8C52054D2399937FCF /* HarmonyOS_Sans_TC_Thin.ttf in Resources */,
+				8079A24F5A5B4C45BC0EAE20 /* LICENSE.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

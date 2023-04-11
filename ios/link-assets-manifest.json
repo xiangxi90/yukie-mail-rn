@@ -1,0 +1,201 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/HarmonyOS Sans/HarmonyOS_Sans/HarmonyOS_Sans_Black.ttf",
+      "sha1": "6e4e0b05def15799f268f23ddefce839e8c0d0af"
+    },
+    {
+      "path": "assets/fonts/HarmonyOS Sans/HarmonyOS_Sans/HarmonyOS_Sans_Bold.ttf",
+      "sha1": "24ecae3d602aa62d6834b7b7c8ddd686f0ffe2f5"
+    },
+    {
+      "path": "assets/fonts/HarmonyOS Sans/HarmonyOS_Sans/HarmonyOS_Sans_Light.ttf",
+      "sha1": "113cb783eea5b3ea589c9fd14e43f7323dec2699"
+    },
+    {
+      "path": "assets/fonts/HarmonyOS Sans/HarmonyOS_Sans/HarmonyOS_Sans_Medium.ttf",
+      "sha1": "f422fe9489424971b9baa2841dda6b5c88580899"
+    },
+    {
+      "path": "assets/fonts/HarmonyOS Sans/HarmonyOS_Sans/HarmonyOS_Sans_Regular.ttf",
+      "sha1": "8bea06ce4d7b4196f5e5f60b5580bdb1519ff560"
+    },
+    {
+      "path": "assets/fonts/HarmonyOS Sans/HarmonyOS_Sans/HarmonyOS_Sans_Thin.ttf",
+      "sha1": "53856ddebb934b29b96f4a01be35e9abc8511967"
+    },
+    {
+      "path": "assets/fonts/HarmonyOS Sans/HarmonyOS_Sans/LICENSE.txt",
+      "sha1": "8d45995212d77c35643e001f84b290f1d702ecac"
+    },
+    {
+      "path": "assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_Condensed/HarmonyOS_Sans_Condensed_Black.ttf",
+      "sha1": "263c4f4e308f9011a4643bbcda518af1144b0aa4"
+    },
+    {
+      "path": "assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_Condensed/HarmonyOS_Sans_Condensed_Bold.ttf",
+      "sha1": "a1d3ee90247144291f9b408e6564b49484588f40"
+    },
+    {
+      "path": "assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_Condensed/HarmonyOS_Sans_Condensed_Light.ttf",
+      "sha1": "d1b4c49247c0df0c81664736b53f3ae4b3f31775"
+    },
+    {
+      "path": "assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_Condensed/HarmonyOS_Sans_Condensed_Medium.ttf",
+      "sha1": "9b3912124e12b310b8f9d8c778d099fdd53c8378"
+    },
+    {
+      "path": "assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_Condensed/HarmonyOS_Sans_Condensed_Regular.ttf",
+      "sha1": "e6a716f1a40b77fd1fda4b64c456b716eb9780f3"
+    },
+    {
+      "path": "assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_Condensed/HarmonyOS_Sans_Condensed_Thin.ttf",
+      "sha1": "dc1570b381c775529e1bf0a16579941c2fd52f00"
+    },
+    {
+      "path": "assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_Condensed_Italic/HarmonyOS_Sans_Condensed_Black_Italic.ttf",
+      "sha1": "e23f4164cdc2506e068d9664e3160242395850a6"
+    },
+    {
+      "path": "assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_Condensed_Italic/HarmonyOS_Sans_Condensed_Bold_Italic.ttf",
+      "sha1": "da44c67da6298f8dfb7be5ced7aa268e20080367"
+    },
+    {
+      "path": "assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_Condensed_Italic/HarmonyOS_Sans_Condensed_Light_Italic.ttf",
+      "sha1": "c3ccba7db99d375547daad3bbfb5b8c8d20cb94c"
+    },
+    {
+      "path": "assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_Condensed_Italic/HarmonyOS_Sans_Condensed_Medium_Italic.ttf",
+      "sha1": "318a1a5c67903df3d8ec3bb770e8370b0d295346"
+    },
+    {
+      "path": "assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_Condensed_Italic/HarmonyOS_Sans_Condensed_Regular_Italic.ttf",
+      "sha1": "978b05e249f49571064647eb5532ea7f78a2e888"
+    },
+    {
+      "path": "assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_Condensed_Italic/HarmonyOS_Sans_Condensed_Thin_Italic.ttf",
+      "sha1": "856a8cf04d5425f25da870b9c6243533958c03a2"
+    },
+    {
+      "path": "assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_Italic/HarmonyOS_Sans_Black_Italic.ttf",
+      "sha1": "9ced982e5917d4285eb7eb26ec2739fdb36914f4"
+    },
+    {
+      "path": "assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_Italic/HarmonyOS_Sans_Bold_Italic.ttf",
+      "sha1": "b186ecd664f955cfcd0612354155d4edf3301f2d"
+    },
+    {
+      "path": "assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_Italic/HarmonyOS_Sans_Light_Italic.ttf",
+      "sha1": "ff1e474f1d317e4e0e28ed75ea8db063bcc43ed4"
+    },
+    {
+      "path": "assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_Italic/HarmonyOS_Sans_Medium_Italic.ttf",
+      "sha1": "a7db9123d5a6ac643764354a814d44fbb7879bdf"
+    },
+    {
+      "path": "assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_Italic/HarmonyOS_Sans_Regular_Italic.ttf",
+      "sha1": "ade68e93509e0242132e0106c4d12fc04c5e7b7f"
+    },
+    {
+      "path": "assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_Italic/HarmonyOS_Sans_Thin_Italic.ttf",
+      "sha1": "fd81841aafed04f36812251dcdf1efb9220681f4"
+    },
+    {
+      "path": "assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_Naskh_Arabic/HarmonyOS_Sans_Naskh_Arabic_Black.ttf",
+      "sha1": "8ad39c5cf34ec5b2a686dbbb652ac6dbf1fe8529"
+    },
+    {
+      "path": "assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_Naskh_Arabic/HarmonyOS_Sans_Naskh_Arabic_Bold.ttf",
+      "sha1": "318a4cec375706bb29ac072ff8ebc5c079475a77"
+    },
+    {
+      "path": "assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_Naskh_Arabic/HarmonyOS_Sans_Naskh_Arabic_Light.ttf",
+      "sha1": "fa96fe587d2b0868b771edde7bb8b3efd459f9a2"
+    },
+    {
+      "path": "assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_Naskh_Arabic/HarmonyOS_Sans_Naskh_Arabic_Medium.ttf",
+      "sha1": "d67a1e429290e13c949be3d4a85aa722b77efbdb"
+    },
+    {
+      "path": "assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_Naskh_Arabic/HarmonyOS_Sans_Naskh_Arabic_Regular.ttf",
+      "sha1": "4cc07759e2e24b66d3909a3617ffcc251bbb82e5"
+    },
+    {
+      "path": "assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_Naskh_Arabic/HarmonyOS_Sans_Naskh_Arabic_Thin.ttf",
+      "sha1": "6c606ee9a979b4da32f04982c774653ecbbc9871"
+    },
+    {
+      "path": "assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_Naskh_Arabic_UI/HarmonyOS_Sans_Naskh_Arabic_UI_Black.ttf",
+      "sha1": "554a28075a21d83792b2cba13e3ad822d36fc4e8"
+    },
+    {
+      "path": "assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_Naskh_Arabic_UI/HarmonyOS_Sans_Naskh_Arabic_UI_Bold.ttf",
+      "sha1": "ca091f83aba72a3d5733bd83dc4293c799776376"
+    },
+    {
+      "path": "assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_Naskh_Arabic_UI/HarmonyOS_Sans_Naskh_Arabic_UI_Light.ttf",
+      "sha1": "8d01d929d751bc2b32b7bbc2c42d5211174c7574"
+    },
+    {
+      "path": "assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_Naskh_Arabic_UI/HarmonyOS_Sans_Naskh_Arabic_UI_Medium.ttf",
+      "sha1": "fef7789888e3e2d49d91cc35be77084a36bfbafb"
+    },
+    {
+      "path": "assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_Naskh_Arabic_UI/HarmonyOS_Sans_Naskh_Arabic_UI_Regular.ttf",
+      "sha1": "60c50c898b96e9b6ee449e77b3e665287c716616"
+    },
+    {
+      "path": "assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_Naskh_Arabic_UI/HarmonyOS_Sans_Naskh_Arabic_UI_Thin.ttf",
+      "sha1": "f6a9df629542841bb386a907389bf1b52834bfcb"
+    },
+    {
+      "path": "assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_SC/HarmonyOS_Sans_SC_Black.ttf",
+      "sha1": "3a4e6126157d8cc12037f01d4a596eff809cdc70"
+    },
+    {
+      "path": "assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_SC/HarmonyOS_Sans_SC_Bold.ttf",
+      "sha1": "98c3ad96425f0fc315ea9f151af2ef31f3399d1a"
+    },
+    {
+      "path": "assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_SC/HarmonyOS_Sans_SC_Light.ttf",
+      "sha1": "d696f3db6dcd65b8b40e1118286e727fc4e91e76"
+    },
+    {
+      "path": "assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_SC/HarmonyOS_Sans_SC_Medium.ttf",
+      "sha1": "b2d3c8ccd623f92e5a7cfd3dd02e51231d0f26b5"
+    },
+    {
+      "path": "assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_SC/HarmonyOS_Sans_SC_Regular.ttf",
+      "sha1": "c73de21db1e0bbd8c37d672508749ae3148f5274"
+    },
+    {
+      "path": "assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_SC/HarmonyOS_Sans_SC_Thin.ttf",
+      "sha1": "bb8a3163dc95cd405ae25640409473a891622121"
+    },
+    {
+      "path": "assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_TC/HarmonyOS_Sans_TC_Black.ttf",
+      "sha1": "8c72461fcebe31333f250f8dc7e0b8a4e98f3e60"
+    },
+    {
+      "path": "assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_TC/HarmonyOS_Sans_TC_Bold.ttf",
+      "sha1": "396872797ebb8970fedc9283674b63064e6cabdf"
+    },
+    {
+      "path": "assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_TC/HarmonyOS_Sans_TC_Light.ttf",
+      "sha1": "ab9f417507c2800561eacf2eab86c96d36a747d6"
+    },
+    {
+      "path": "assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_TC/HarmonyOS_Sans_TC_Medium.ttf",
+      "sha1": "4fc1abf5835a1467217a3182f565ce841ced2f2f"
+    },
+    {
+      "path": "assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_TC/HarmonyOS_Sans_TC_Regular.ttf",
+      "sha1": "4e5fa8b6792f3b374c17ef3cbf4d02a4be6f3e1e"
+    },
+    {
+      "path": "assets/fonts/HarmonyOS Sans/HarmonyOS_Sans_TC/HarmonyOS_Sans_TC_Thin.ttf",
+      "sha1": "fd1c69d40e3b5957a800187def88158e50371b5d"
+    }
+  ]
+}
