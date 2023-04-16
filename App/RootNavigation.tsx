@@ -9,7 +9,7 @@ import {
 } from '@react-navigation/stack';
 import {Appbar} from 'react-native-paper';
 
-import ScreenList, {examples} from './ScreenList';
+import ScreenList, {screens} from './ScreenList';
 
 const Stack = createStackNavigator();
 
@@ -65,15 +65,15 @@ const Root = () => {
           headerMode: 'screen',
         }}
       />
-      {(Object.keys(examples) as Array<keyof typeof examples>).map(id => {
+      {(Object.keys(screens) as Array<keyof typeof screens>).map(id => {
         return (
           <Stack.Screen
             key={id}
             name={id}
-            component={examples[id]}
+            component={screens[id]}
             options={{
-              title: examples[id].title,
-              headerShown: id !== 'themingWithReactNavigation',
+              title: screens[id].title,
+              headerShown: id !== 'FirstUseOnboard',
             }}
           />
         );

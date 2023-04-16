@@ -7,6 +7,7 @@ import {Badge, Drawer, MD2Colors, MD3Colors, Text} from 'react-native-paper';
 import {useGlobalTheme} from '../../app';
 import {useNavigation} from '@react-navigation/native';
 
+import {settingIcon, draftIcon} from '../icons/basicIcons';
 // type Props = {
 //   toggleTheme: () => void;
 //   toggleRTL: () => void;
@@ -27,7 +28,13 @@ const DrawerItemsData = [
     right: () => <Text variant="labelLarge">44</Text>,
   },
   {
-    label: 'Starred',
+    label: 'Draft',
+    icon: draftIcon,
+    key: 5,
+    right: () => <Text variant="labelLarge">44</Text>,
+  },
+  {
+    label: 'Stared',
     icon: 'star',
     key: 1,
     right: ({color}: {color: string}) => (
@@ -47,45 +54,6 @@ const DrawerItemsData = [
     right: () => <Badge visible size={8} style={styles.badge} />,
   },
 ];
-
-// const DrawerCollapsedItemsData = [
-//   {
-//     label: 'Inbox',
-//     focusedIcon: 'inbox',
-//     unfocusedIcon: 'inbox-outline',
-//     key: 0,
-//     badge: 44,
-//   },
-//   {
-//     label: 'Starred',
-//     focusedIcon: 'star',
-//     unfocusedIcon: 'star-outline',
-//     key: 1,
-//   },
-//   {
-//     label: 'Sent mail',
-//     focusedIcon: 'send',
-//     unfocusedIcon: 'send-outline',
-//     key: 2,
-//   },
-//   {
-//     label: 'A very long title that will be truncated',
-//     focusedIcon: 'delete',
-//     unfocusedIcon: 'delete-outline',
-//     key: 3,
-//   },
-//   {
-//     label: 'Full width',
-//     focusedIcon: 'arrow-all',
-//     key: 4,
-//   },
-//   {
-//     focusedIcon: 'bell',
-//     unfocusedIcon: 'bell-outline',
-//     key: 5,
-//     badge: true,
-//   },
-// ];
 
 const DrawerItems = () => {
   const [drawerItemIndex, setDrawerItemIndex] = React.useState<number>(0);
@@ -122,9 +90,6 @@ const DrawerItems = () => {
       ]}>
       <>
         <Drawer.Section>
-          <Text> ceshi</Text>
-        </Drawer.Section>
-        <Drawer.Section>
           <Drawer.Item
             label="所有收件箱"
             icon="inbox"
@@ -137,7 +102,7 @@ const DrawerItems = () => {
             }}
           />
         </Drawer.Section>
-        <Drawer.Section title="邮箱标签">
+        <Drawer.Section title="文件夹">
           {DrawerItemsData.map((props, index) => (
             <Drawer.Item
               {...props}
@@ -153,7 +118,7 @@ const DrawerItems = () => {
         </Drawer.Section>
         <Drawer.Item
           label="设置"
-          icon="close"
+          icon={settingIcon}
           onPress={() => {
             navigation.navigate('SettingScreen');
           }}

@@ -233,7 +233,7 @@ const MailApp = () => {
             )}
             <StatusBar
               barStyle={
-                !theme.isV3 || theme.dark ? 'light-content' : 'dark-content'
+                !theme.isV3 || theme.dark ? 'dark-content' : 'light-content'
               }
             />
           </NavigationContainer>

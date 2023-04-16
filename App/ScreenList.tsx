@@ -10,7 +10,7 @@ import {FirstUseOnboard} from './screens/OnboardScreen';
 import {useGlobalTheme} from './app';
 
 // 在这里注册界面
-export const mainExamples: Record<
+export const mainScreens: Record<
   string,
   React.ComponentType<any> & {title: string}
 > = {
@@ -18,16 +18,16 @@ export const mainExamples: Record<
   FirstUseOnboard: FirstUseOnboard,
 };
 
-export const nestedExamples: Record<
+export const nestedScreens: Record<
   string,
   React.ComponentType<any> & {title: string}
 > = {};
 
-export const examples: Record<
+export const screens: Record<
   string,
   React.ComponentType<any> & {title: string}
 > = {
-  ...mainExamples,
+  ...mainScreens,
   // ...nestedExamples,
 };
 
@@ -37,28 +37,21 @@ type Props = {
 
 type Item = {
   id: string;
-  data: (typeof mainExamples)[string];
+  data: (typeof mainScreens)[string];
 };
 
-const data = Object.keys(mainExamples).map(
-  (id): Item => ({id, data: mainExamples[id]}),
+const data = Object.keys(mainScreens).map(
+  (id): Item => ({id, data: mainScreens[id]}),
 );
 
 export default function ScreenList({navigation}: Props) {
   const keyExtractor = (item: {id: string}) => item.id;
 
-  const {colors, isV3} = useGlobalTheme();
+  const {colors} = useGlobalTheme();
   const safeArea = useSafeAreaInsets();
 
   const renderItem = ({item}: {item: Item}) => {
     const {data: item_data, id} = item;
-
-    if (
-      !isV3 &&
-      item_data.title === mainExamples.themingWithReactNavigation.title
-    ) {
-      return null;
-    }
 
     return (
       <List.Item

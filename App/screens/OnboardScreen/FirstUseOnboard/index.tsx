@@ -1,38 +1,49 @@
-import PaperOnboarding, {
-  PaperOnboardingItemType,
-} from '@gorhom/paper-onboarding';
+import {Image} from 'react-native';
+import React from 'react';
 
-const data: PaperOnboardingItemType[] = [
-  {
-    title: 'Hotels',
-    description: 'All hotels and hostels are sorted by hospitality rating',
-    backgroundColor: '#698FB8',
-    image: '../../../../assets/images/yukie.png',
-    //icon: "inbox",
-    //content: /* CUSTOM COMPONENT */,
-  },
-  {
-    title: 'Banks',
-    description: 'We carefully verify all banks before add them into the app',
-    backgroundColor: '#6CB2B8',
-    image: '../../../../assets/images/yukie.png',
-    //icon: "outbox",
-    //content: /* CUSTOM COMPONENT */,
-  },
-  {
-    title: 'Stores',
-    description: 'All local stores are categorized for your convenience',
-    backgroundColor: '#9D8FBF',
-    image: '../../../../assets/images/yukie.png',
-    //icon: "send",
-    //content: /* CUSTOM COMPONENT */,
-  },
-];
+import Onboarding from 'react-native-onboarding-swiper';
+import type {StackNavigationProp} from '@react-navigation/stack';
 
-export const FirstUseOnboard = () => {
-  const handleOnClosePress = () => console.log('navigate to other screen');
-  return (
-    <PaperOnboarding data={data} onCloseButtonPress={handleOnClosePress} />
-  );
+type Props = {
+  navigation: StackNavigationProp<{[key: string]: undefined}>;
 };
+
+export const FirstUseOnboard = ({navigation}: Props) => (
+  <Onboarding
+    onDone={() => console.log('done')}
+    onSkip={() => {
+      if (navigation.canGoBack()) {
+        navigation.goBack();
+      } else {
+        navigation.navigate('Home');
+      }
+    }}
+    pages={[
+      {
+        backgroundColor: '#fff',
+        image: (
+          <Image source={require('../../../../assets/images/song-1.jpg')} />
+        ),
+        title: 'Onboarding',
+        subtitle: 'Done with React Native Onboarding Swiper',
+      },
+      {
+        backgroundColor: '#fe6e58',
+        image: (
+          <Image source={require('../../../../assets/images/song-1.jpg')} />
+        ),
+        title: 'The Title',
+        subtitle: 'This is the subtitle that sumplements the title.',
+      },
+      {
+        backgroundColor: '#999',
+        image: (
+          <Image source={require('../../../../assets/images/song-1.jpg')} />
+        ),
+        title: 'Triangle',
+        subtitle: "Beautiful, isn't it?",
+      },
+    ]}
+  />
+);
 FirstUseOnboard.title = 'FirstUseOnboard';
