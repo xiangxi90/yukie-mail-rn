@@ -7,7 +7,6 @@ import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 
-
 public class YukieMailBridge extends ReactContextBaseJavaModule {
     static {
         System.loadLibrary("mail_ffi");
@@ -24,7 +23,7 @@ public class YukieMailBridge extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void sayHelloWorld(String name, Promise promise) {
-        Log.d("====test_rust_lib======","say hello");
+        Log.d("Rust_LIB", "===say_hello===");
         promise.resolve(helloWorld(name));
     }
 

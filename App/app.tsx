@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {I18nManager, StatusBar} from 'react-native';
+import {I18nManager, Platform, StatusBar} from 'react-native';
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {createDrawerNavigator} from '@react-navigation/drawer';
@@ -50,6 +50,18 @@ const DrawerContent = () => {
 
 const Drawer = createDrawerNavigator<{Home: undefined}>();
 ///----------------------------------///
+const fontConfig = configureFonts({
+  config: {
+    fontFamily: Platform.select({
+      web: 'HarmonyOS_Sans_Regular',
+      ios: 'System',
+      android:
+        'HarmonyOS_Sans_Regular,HarmonyOS_Sans_Bold,HarmonyOS_Sans_Light,HarmonyOS_Sans_Thin',
+      default: 'sans-serif',
+    }),
+  },
+});
+///----------------------------------///
 const MailApp = () => {
   // hooks
   const [isReady, setIsReady] = React.useState(false);
@@ -77,6 +89,7 @@ const MailApp = () => {
       dark: MD3DarkTheme,
     },
   }[themeVersion][themeMode];
+  theme.fonts = fontConfig;
 
   React.useEffect(() => {
     const restoreState = async () => {
@@ -187,17 +200,9 @@ const MailApp = () => {
   };
 
   const combinedTheme = isDarkMode ? CombinedDarkTheme : CombinedDefaultTheme;
-  const configuredFontTheme = {
-    ...combinedTheme,
-    fonts: configureFonts({
-      config: {
-        fontFamily: 'HarmonyOS_Sans_Bold',
-      },
-    }),
-  };
 
   return (
-    <PaperProvider theme={customFontLoaded ? configuredFontTheme : theme}>
+    <PaperProvider theme={theme}>
       <PreferencesContext.Provider value={preferences}>
         <React.Fragment>
           <NavigationContainer

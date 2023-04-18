@@ -8,7 +8,8 @@ import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import SettingScreen from './screens/SettingScreen';
 import {FirstUseOnboard} from './screens/OnboardScreen';
 import {useGlobalTheme} from './app';
-
+import {Editor} from './screens/EditScreen';
+import {MailListScreen} from './screens/MailListScreen';
 // 在这里注册界面
 export const mainScreens: Record<
   string,
@@ -16,6 +17,8 @@ export const mainScreens: Record<
 > = {
   SettingScreen: SettingScreen,
   FirstUseOnboard: FirstUseOnboard,
+  EditorScreen: Editor,
+  MailListScreen: MailListScreen,
 };
 
 export const nestedScreens: Record<

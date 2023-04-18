@@ -1,8 +1,6 @@
-extern crate jni;
-
-use self::jni::objects::{JClass, JString};
-use self::jni::sys::jstring;
-use self::jni::JNIEnv;
+use jni::objects::{JClass, JString};
+use jni::sys::jstring;
+use jni::JNIEnv;
 
 #[no_mangle]
 pub unsafe extern "C" fn Java_com_yukie_1mail_1rn_YukieMailBridge_helloWorld(

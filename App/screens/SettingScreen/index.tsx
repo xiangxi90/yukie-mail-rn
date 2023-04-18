@@ -32,8 +32,7 @@ const SettingScreen = ({navigation}: Props) => {
   const [appbarMode, setAppbarMode] = React.useState<AppbarModes>('small');
   const [showCalendarIcon, setShowCalendarIcon] = React.useState(false);
   const [showElevated, setShowElevated] = React.useState(false);
-  const [darkMode, setDarkMode] = React.useState(false);
-
+  const [darkMode, setDarkMode] = React.useState(preferences.theme.dark);
   const theme = useGlobalTheme();
 
   const isCenterAlignedMode = appbarMode === 'center-aligned';
@@ -134,7 +133,7 @@ const SettingScreen = ({navigation}: Props) => {
         <View style={styles.row}>
           <TextComponent>DarkMode</TextComponent>
           <Switch
-            value={!darkMode}
+            value={darkMode}
             onValueChange={() => {
               setDarkMode(!darkMode);
               preferences.toggleTheme();
