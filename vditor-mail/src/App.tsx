@@ -22,6 +22,7 @@ const App = () => {
         console.log('enter: %s', value);
       },
       height: 360,
+      width: window.screen.width,
       cache: {
         id: 'vditor',
         enable:false,

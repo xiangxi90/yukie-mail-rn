@@ -10,6 +10,7 @@ import {FirstUseOnboard} from './screens/OnboardScreen';
 import {useGlobalTheme} from './app';
 import {Editor} from './screens/EditScreen';
 import {MailListScreen} from './screens/MailListScreen';
+import {CalendarScreen} from './screens/CalendarScreen';
 // 在这里注册界面
 export const mainScreens: Record<
   string,
@@ -19,6 +20,7 @@ export const mainScreens: Record<
   FirstUseOnboard: FirstUseOnboard,
   EditorScreen: Editor,
   MailListScreen: MailListScreen,
+  CalendarScreen: CalendarScreen,
 };
 
 export const nestedScreens: Record<

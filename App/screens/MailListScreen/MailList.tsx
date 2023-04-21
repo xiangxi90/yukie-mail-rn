@@ -54,6 +54,8 @@ const MailListScreen = ({navigation}: Props) => {
     new Animated.Value(0),
   );
 
+  const [selectedMessage, setSelectedMessage] = React.useState<Item>();
+
   React.useLayoutEffect(() => {
     navigation.setOptions({
       headerShown: false,
@@ -69,7 +71,11 @@ const MailListScreen = ({navigation}: Props) => {
           style={styles.ripple}
           onPress={() => {
             console.log('hello');
-            navigation.navigate('EditorScreen');
+            navigation.push('EditorScreen');
+          }}
+          onLongPress={() => {
+            setSelectedMessage(item);
+            setVisible(true);
           }}
           rippleColor="rgba(0, 0, 0, .32)">
           <View style={styles.itemContainer}>
@@ -124,18 +130,20 @@ const MailListScreen = ({navigation}: Props) => {
                       : MD2Colors.grey500
                   }
                   size={20}
-                  onPress={() => setVisible(!visible)}
+                  onPress={() => {
+                    item.favorite = !item.favorite;
+                  }}
                   style={styles.icon}
                 />
 
                 <Badge
                   visible={visible}
-                  size={24}
+                  size={18}
                   style={[
                     styles.badge,
                     {
                       backgroundColor: isV3
-                        ? MD3Colors.primary80
+                        ? MD3Colors.neutral60
                         : MD2Colors.blue500,
                     },
                   ]}>
@@ -151,6 +159,8 @@ const MailListScreen = ({navigation}: Props) => {
   );
 
   const onScroll = ({nativeEvent}: NativeSyntheticEvent<NativeScrollEvent>) => {
+    // 滑动时，使工具框消失
+    setVisible(false);
     const currentScrollPosition =
       Math.floor(nativeEvent?.contentOffset?.y) ?? 0;
 
@@ -202,7 +212,7 @@ const MailListScreen = ({navigation}: Props) => {
         onScroll={onScroll}
       />
 
-      {headerVisible && (
+      {visible && (
         <Appbar
           style={[
             styles.bottom,
@@ -213,7 +223,12 @@ const MailListScreen = ({navigation}: Props) => {
           ]}
           safeAreaInsets={{bottom, left, right}}
           theme={{mode: 'adaptive'}}>
-          <Appbar.Action icon="archive" onPress={() => {}} />
+          <Appbar.Action
+            icon="archive"
+            onPress={() => {
+              console.log(selectedMessage);
+            }}
+          />
           <Appbar.Action icon="email" onPress={() => {}} />
           <Appbar.Action icon="label" onPress={() => {}} />
           <Appbar.Action icon="delete" onPress={() => {}} />

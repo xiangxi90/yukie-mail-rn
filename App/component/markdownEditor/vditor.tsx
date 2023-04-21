@@ -26,29 +26,27 @@ export const Vditor = ({init_text, init_theme}: Props) => {
   };
 
   return (
-    <View style={styles.container}>
-      <WebView
-        ref={_webViewRef}
-        style={{flex: 1}}
-        source={
-          Platform.OS === 'ios'
-            ? require('../../../assets/html/editor.html')
-            : {uri: 'file:///android_asset/editor.html'}
-        }
-        useWebKit={true}
-        keyboardDisplayRequiresUserAction={false}
-        injectedJavaScript={INJECTED_JAVASCRIPT}
-        javaScriptEnabled={true}
-        originWhitelist={['*']}
-        onMessage={_onMessage}
-      />
-    </View>
+    <WebView
+      ref={_webViewRef}
+      style={{flex: 1}}
+      source={
+        Platform.OS === 'ios'
+          ? require('../../../assets/html/editor.html')
+          : {uri: 'file:///android_asset/editor.html'}
+      }
+      useWebKit={true}
+      keyboardDisplayRequiresUserAction={false}
+      injectedJavaScript={INJECTED_JAVASCRIPT}
+      javaScriptEnabled={true}
+      originWhitelist={['*']}
+      onMessage={_onMessage}
+      scrollEnabled={false}
+    />
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 20,
   },
 });

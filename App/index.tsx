@@ -1,5 +1,7 @@
 import MailApp from './app';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
+import {Provider} from 'react-redux';
+import store from './storage';
 // import Reactotron from 'reactotron-react-native';
 
 // Reactotron.configure() // controls connection & communication settings
@@ -8,9 +10,11 @@ import {SafeAreaProvider} from 'react-native-safe-area-context';
 
 const App = () => {
   return (
-    <SafeAreaProvider>
-      <MailApp />
-    </SafeAreaProvider>
+    <Provider store={store}>
+      <SafeAreaProvider>
+        <MailApp />
+      </SafeAreaProvider>
+    </Provider>
   );
 };
 

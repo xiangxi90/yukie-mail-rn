@@ -8,42 +8,47 @@ type Props = {
   navigation: StackNavigationProp<{[key: string]: undefined}>;
 };
 
-export const FirstUseOnboard = ({navigation}: Props) => (
-  <Onboarding
-    onDone={() => console.log('done')}
-    onSkip={() => {
-      if (navigation.canGoBack()) {
-        navigation.goBack();
-      } else {
-        navigation.navigate('Home');
-      }
-    }}
-    pages={[
-      {
-        backgroundColor: '#fff',
-        image: (
-          <Image source={require('../../../../assets/images/song-1.jpg')} />
-        ),
-        title: 'Onboarding',
-        subtitle: 'Done with React Native Onboarding Swiper',
-      },
-      {
-        backgroundColor: '#fe6e58',
-        image: (
-          <Image source={require('../../../../assets/images/song-1.jpg')} />
-        ),
-        title: 'The Title',
-        subtitle: 'This is the subtitle that sumplements the title.',
-      },
-      {
-        backgroundColor: '#999',
-        image: (
-          <Image source={require('../../../../assets/images/song-1.jpg')} />
-        ),
-        title: 'Triangle',
-        subtitle: "Beautiful, isn't it?",
-      },
-    ]}
-  />
+export const FirstUseOnboard = ({ navigation }: Props) => (
+  
+  return (
+    <Onboarding
+      onDone={() => {
+        console.log('done');
+      }}
+      onSkip={() => {
+        if (navigation.canGoBack()) {
+          navigation.goBack();
+        } else {
+          navigation.navigate('Home');
+        }
+      }}
+      pages={[
+        {
+          backgroundColor: '#fff',
+          image: (
+            <Image source={require('../../../../assets/images/song-1.jpg')} />
+          ),
+          title: 'Onboarding',
+          subtitle: 'Done with React Native Onboarding Swiper',
+        },
+        {
+          backgroundColor: '#fe6e58',
+          image: (
+            <Image source={require('../../../../assets/images/song-1.jpg')} />
+          ),
+          title: 'The Title',
+          subtitle: 'This is the subtitle that sumplements the title.',
+        },
+        {
+          backgroundColor: '#999',
+          image: (
+            <Image source={require('../../../../assets/images/song-1.jpg')} />
+          ),
+          title: 'Triangle',
+          subtitle: "Beautiful, isn't it?",
+        },
+      ]}
+    />
+  );
 );
 FirstUseOnboard.title = 'FirstUseOnboard';
