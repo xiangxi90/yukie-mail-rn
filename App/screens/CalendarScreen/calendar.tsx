@@ -16,7 +16,7 @@ const e = [
 ];
 
 export const CalendarScreen = () => {
-  const events = useAppSelector(state => state.calendarSlice.calendars);
+  const events = useAppSelector(state => state.calendar.calendars);
   const dispatch = useAppDispatch();
   return (
     <>

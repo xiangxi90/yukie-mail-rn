@@ -1,8 +1,9 @@
+/* eslint-disable react/no-unstable-nested-components */
 import {StackNavigationProp} from '@react-navigation/stack';
 import * as React from 'react';
 import {NativeScrollEvent, NativeSyntheticEvent} from 'react-native';
 import {Animated, FlatList, Platform, StyleSheet, View} from 'react-native';
-import {Badge, FAB, TouchableRipple} from 'react-native-paper';
+import {Badge, Card, FAB} from 'react-native-paper';
 import {
   Appbar,
   Avatar,
@@ -17,6 +18,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {useGlobalTheme} from '../../app';
 import {animatedFABExampleData} from '../../utils';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
+import {settingIcon} from '../../component/icons/basicIcons';
 
 type Item = {
   id: string;
@@ -44,11 +46,12 @@ const MailListScreen = ({navigation}: Props) => {
   const isIOS = Platform.OS === 'ios';
 
   const [extended, setExtended] = React.useState<boolean>(false);
-  const [visible, setVisible] = React.useState<boolean>(true);
+  const [visible, setVisible] = React.useState<boolean>(false);
 
-  const [headerVisible, setHeaderVisible] = React.useState<boolean>(true);
+  const [_threadModalVisible, setThreadModalVisible] =
+    React.useState<boolean>(false);
 
-  const [scrollPosition, setScrollPosition] = React.useState<number>(0);
+  const [_scrollPosition, setScrollPosition] = React.useState<number>(0);
 
   const {current: velocity} = React.useRef<Animated.Value>(
     new Animated.Value(0),
@@ -67,78 +70,34 @@ const MailListScreen = ({navigation}: Props) => {
       const TextComponent = isV3 ? Text : Paragraph;
 
       return (
-        <TouchableRipple
-          style={styles.ripple}
-          onPress={() => {
-            console.log('hello');
-            navigation.push('EditorScreen');
-          }}
-          onLongPress={() => {
-            setSelectedMessage(item);
-            setVisible(true);
-          }}
-          rippleColor="rgba(0, 0, 0, .32)">
-          <View style={styles.itemContainer}>
-            <Avatar.Text
-              style={[styles.avatar, {backgroundColor: item.bgColor}]}
-              label={item.initials}
-              color={isV3 ? MD3Colors.primary100 : MD2Colors.white}
-              size={40}
-            />
-            <View style={styles.itemTextContentContainer}>
-              <View style={styles.itemHeaderContainer}>
-                <TextComponent
-                  variant="labelLarge"
-                  style={[styles.header, !item.read && styles.read]}
-                  ellipsizeMode="tail"
-                  numberOfLines={1}>
-                  {item.sender}
-                </TextComponent>
-                <TextComponent
-                  variant="labelLarge"
-                  style={[styles.date, !item.read && styles.read]}>
-                  {item.date}
-                </TextComponent>
-              </View>
-
-              <View style={styles.itemMessageContainer}>
-                <View style={styles.flex}>
-                  <TextComponent
-                    variant="labelLarge"
-                    ellipsizeMode="tail"
-                    numberOfLines={1}
-                    style={!item.read && styles.read}>
-                    {item.header}
-                  </TextComponent>
-                  <TextComponent
-                    variant="labelLarge"
-                    numberOfLines={1}
-                    ellipsizeMode="tail">
-                    {item.message}
-                  </TextComponent>
-                </View>
-
-                <Icon
-                  name={item.favorite ? 'star' : 'star-outline'}
-                  color={
-                    item.favorite
-                      ? isV3
-                        ? MD3Colors.error70
-                        : MD2Colors.orange500
-                      : isV3
-                      ? MD3Colors.neutralVariant70
-                      : MD2Colors.grey500
-                  }
-                  size={20}
-                  onPress={() => {
-                    item.favorite = !item.favorite;
-                  }}
-                  style={styles.icon}
+        <>
+          <Card
+            style={styles.card}
+            mode="elevated"
+            onPress={() => {
+              console.log('hello');
+              navigation.push('EditorScreen');
+            }}
+            onLongPress={() => {
+              setSelectedMessage(item);
+              setVisible(true);
+            }}>
+            <Card.Title
+              title={item.sender}
+              style={styles.header}
+              subtitle={item.header}
+              left={(_props: any) => (
+                <Avatar.Text
+                  style={[styles.avatar, {backgroundColor: item.bgColor}]}
+                  label={item.initials}
+                  color={isV3 ? MD3Colors.primary100 : MD2Colors.white}
+                  size={40}
                 />
-
+              )}
+              right={(_props: any) => (
                 <Badge
-                  visible={visible}
-                  size={18}
+                  visible={true}
+                  size={16}
                   style={[
                     styles.badge,
                     {
@@ -149,41 +108,70 @@ const MailListScreen = ({navigation}: Props) => {
                   ]}>
                   99+
                 </Badge>
+              )}
+            />
+            <Card.Content>
+              <View style={styles.itemContainer}>
+                <TextComponent
+                  variant="labelLarge"
+                  numberOfLines={2}
+                  ellipsizeMode="tail">
+                  {item.message}
+                </TextComponent>
+                <View style={styles.itemTextContentContainer}>
+                  <TextComponent
+                    variant="labelLarge"
+                    numberOfLines={1}
+                    ellipsizeMode="tail">
+                    {item.date}
+                  </TextComponent>
+                </View>
+                <View style={styles.itemTextContentContainer}>
+                  <Icon
+                    name={item.favorite ? 'star' : 'star-outline'}
+                    color={
+                      item.favorite
+                        ? isV3
+                          ? MD3Colors.error70
+                          : MD2Colors.orange500
+                        : isV3
+                        ? MD3Colors.neutralVariant70
+                        : MD2Colors.grey500
+                    }
+                    size={20}
+                    onPress={() => {
+                      console.log('favorite status change');
+                      item.favorite = !item.favorite;
+                    }}
+                    style={styles.icon}
+                  />
+                  <Icon
+                    name={'dots-vertical'}
+                    color={
+                      isV3 ? MD3Colors.neutralVariant70 : MD2Colors.grey500
+                    }
+                    size={20}
+                    onPress={() => {
+                      console.log('ccc');
+                      setThreadModalVisible(true);
+                    }}
+                    style={styles.icon}
+                  />
+                </View>
               </View>
-            </View>
-          </View>
-        </TouchableRipple>
+            </Card.Content>
+          </Card>
+        </>
       );
     },
-    [visible, isV3],
+    [isV3, navigation],
   );
 
   const onScroll = ({nativeEvent}: NativeSyntheticEvent<NativeScrollEvent>) => {
-    // 滑动时，使工具框消失
-    setVisible(false);
     const currentScrollPosition =
       Math.floor(nativeEvent?.contentOffset?.y) ?? 0;
-
-    if (
-      currentScrollPosition - scrollPosition > 150 &&
-      headerVisible === true
-    ) {
-      console.log(
-        'close::now:' + currentScrollPosition + 'pre' + scrollPosition,
-      );
-      setHeaderVisible(false);
-    } else if (
-      currentScrollPosition - scrollPosition < -150 ||
-      (currentScrollPosition <= 0 && headerVisible === false)
-    ) {
-      // console.log(
-      //   'open::now:' + currentScrollPosition + 'pre' + scrollPosition,
-      // );
-      setHeaderVisible(true);
-    }
-
     setScrollPosition(currentScrollPosition);
-
+    setVisible(false);
     if (!isIOS) {
       return velocity.setValue(currentScrollPosition);
     }
@@ -211,9 +199,9 @@ const MailListScreen = ({navigation}: Props) => {
         contentContainerStyle={styles.container}
         onScroll={onScroll}
       />
-
       {visible && (
-        <Appbar
+        <Appbar.Header
+          elevated={true}
           style={[
             styles.bottom,
             {
@@ -232,20 +220,40 @@ const MailListScreen = ({navigation}: Props) => {
           <Appbar.Action icon="email" onPress={() => {}} />
           <Appbar.Action icon="label" onPress={() => {}} />
           <Appbar.Action icon="delete" onPress={() => {}} />
-        </Appbar>
+        </Appbar.Header>
       )}
       <Portal>
         <FAB.Group
           open={extended}
-          icon={extended ? 'calendar-today' : 'plus'}
+          icon={extended ? 'star' : 'star-outline'}
           actions={[
-            {icon: 'plus', onPress: () => {}},
-            {icon: 'star', label: 'Star', onPress: () => {}},
-            {icon: 'email', label: 'Email', onPress: () => {}},
             {
-              icon: 'bell',
-              label: 'Remind',
-              onPress: () => {},
+              icon: 'star',
+              label: 'Search',
+              onPress: () => {
+                console.log('search');
+              },
+            },
+            {
+              icon: 'pen',
+              label: 'New Mail',
+              onPress: () => {
+                navigation.navigate('EditorScreen');
+              },
+            },
+            {
+              icon: settingIcon,
+              label: 'Setting',
+              onPress: () => {
+                navigation.navigate('SettingScreen');
+              },
+            },
+            {
+              icon: 'calendar-today',
+              label: 'Calendar',
+              onPress: () => {
+                navigation.navigate('CalendarScreen');
+              },
               size: isV3 ? 'small' : 'medium',
             },
           ]}
@@ -255,14 +263,14 @@ const MailListScreen = ({navigation}: Props) => {
               // do something if the speed dial is open
             }
           }}
-          visible={visible}
+          visible={true}
         />
       </Portal>
     </>
   );
 };
 
-MailListScreen.title = 'Animated Floating Action Button';
+MailListScreen.title = 'Mail List Screen';
 
 const styles = StyleSheet.create({
   container: {
@@ -278,11 +286,12 @@ const styles = StyleSheet.create({
   },
   itemContainer: {
     marginBottom: 16,
-    flexDirection: 'row',
+    flexDirection: 'column',
   },
   itemTextContentContainer: {
-    flexDirection: 'column',
-    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    //flex: 1,
   },
   itemHeaderContainer: {
     flexDirection: 'row',
@@ -334,13 +343,17 @@ const styles = StyleSheet.create({
   },
   badge: {
     position: 'absolute',
-    top: 4,
-    right: 0,
+    bottom: 5,
   },
   ripple: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  card: {
+    margin: 4,
+    marginLeft: 0,
+    marginRight: 0,
   },
 });
 MailListScreen.title = 'maillist';

@@ -48,7 +48,7 @@ const SettingScreen = ({navigation}: Props) => {
             if (navigation.canGoBack()) {
               navigation.goBack();
             } else {
-              navigation.navigate('Home');
+              navigation.navigate('MailListScreen');
             }
           }}
         />

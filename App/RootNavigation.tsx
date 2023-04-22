@@ -5,12 +5,14 @@ import type {DrawerNavigationProp} from '@react-navigation/drawer';
 import {getHeaderTitle} from '@react-navigation/elements';
 import {
   CardStyleInterpolators,
+  StackHeaderProps,
   createStackNavigator,
 } from '@react-navigation/stack';
 import {Appbar} from 'react-native-paper';
 
 import ScreenList, {screens} from './ScreenList';
-
+import {useAppDispatch, useAppSelector} from './hooks';
+import accountSlice, {fetchAccount} from './storage/reducer/accountSlice';
 const Stack = createStackNavigator();
 
 const Root = () => {
@@ -18,6 +20,7 @@ const Root = () => {
     Platform.OS === 'android'
       ? CardStyleInterpolators.forFadeFromBottomAndroid
       : CardStyleInterpolators.forHorizontalIOS;
+  const {account} = useAppSelector(state => state.account);
   return (
     <Stack.Navigator
       screenOptions={({navigation}) => {
@@ -25,7 +28,12 @@ const Root = () => {
           detachPreviousScreen: !navigation.isFocused(),
           cardStyleInterpolator,
           // eslint-disable-next-line react/no-unstable-nested-components
-          header: ({navigation: navigator, route, options, back}) => {
+          header: ({
+            navigation: navigator,
+            route,
+            options,
+            back,
+          }: StackHeaderProps) => {
             const title = getHeaderTitle(options, route.name);
             return (
               <Appbar.Header elevated>
@@ -35,7 +43,7 @@ const Root = () => {
                       if (navigator.canGoBack()) {
                         navigator.goBack();
                       } else {
-                        navigator.navigate('Home');
+                        navigator.navigate('MailListScreen');
                       }
                     }}
                   />
@@ -56,7 +64,7 @@ const Root = () => {
           },
         };
       }}>
-      <Stack.Screen
+      {/* <Stack.Screen
         name="ScreenList"
         component={ScreenList}
         options={{
@@ -64,7 +72,7 @@ const Root = () => {
           cardShadowEnabled: false,
           headerMode: 'screen',
         }}
-      />
+      /> */}
       {(Object.keys(screens) as Array<keyof typeof screens>).map(id => {
         return (
           <Stack.Screen

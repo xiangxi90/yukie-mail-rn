@@ -1,15 +1,15 @@
 import {combineReducers} from 'redux';
 
 //import nav from './navigation.reducer';
-import message from './messageSlice';
-import calendarSlice from './calendarSlice';
-import accounts from './account.reducer';
+import thread from './threadSlice';
+import calendar from './calendarSlice';
+import account from './accountSlice';
 
 const rootRuducer = combineReducers({
   //nav,
-  message,
-  calendarSlice,
-  accounts,
+  thread,
+  calendar,
+  account,
 });
 
 export default rootRuducer;

@@ -95,9 +95,12 @@ const MailApp = () => {
     const restoreState = async () => {
       try {
         const savedStateString = await AsyncStorage.getItem(PERSISTENCE_KEY);
-        const state = JSON.parse(savedStateString || '');
-
-        setInitialState(state);
+        // 如果当前内存中没有对应的navigation信息
+        // 代表为第一次使用app，需要展示对应的onboard信息
+        if (savedStateString) {
+          const state = JSON.parse(savedStateString);
+          setInitialState(state);
+        }
       } catch (e) {
         // ignore error
       } finally {
@@ -115,7 +118,7 @@ const MailApp = () => {
       try {
         const prefString = await AsyncStorage.getItem(PREFERENCES_KEY);
         const preferences = JSON.parse(prefString || '');
-
+        console.log(preferences);
         if (preferences) {
           setIsDarkMode(preferences.theme === 'dark');
 
@@ -238,8 +241,9 @@ const MailApp = () => {
             )}
             <StatusBar
               barStyle={
-                !theme.isV3 || theme.dark ? 'dark-content' : 'light-content'
+                !theme.isV3 || theme.dark ? 'light-content' : 'dark-content'
               }
+              backgroundColor={combinedTheme.colors.background}
             />
           </NavigationContainer>
         </React.Fragment>

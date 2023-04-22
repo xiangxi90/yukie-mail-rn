@@ -8,18 +8,18 @@ type Props = {
   navigation: StackNavigationProp<{[key: string]: undefined}>;
 };
 
-export const FirstUseOnboard = ({ navigation }: Props) => (
-  
+export const FirstUseOnboard = ({navigation}: Props) => {
   return (
     <Onboarding
       onDone={() => {
         console.log('done');
+        navigation.navigate('MailListScreen');
       }}
       onSkip={() => {
         if (navigation.canGoBack()) {
           navigation.goBack();
         } else {
-          navigation.navigate('Home');
+          navigation.navigate('MailListScreen');
         }
       }}
       pages={[
@@ -50,5 +50,5 @@ export const FirstUseOnboard = ({ navigation }: Props) => (
       ]}
     />
   );
-);
+};
 FirstUseOnboard.title = 'FirstUseOnboard';

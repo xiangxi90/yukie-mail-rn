@@ -27,7 +27,7 @@ export const Vditor = ({navigation}: Props) => {
             if (navigation.canGoBack()) {
               navigation.goBack();
             } else {
-              navigation.navigate('Home');
+              navigation.navigate('MailListScreen');
             }
           }}
         />
@@ -35,7 +35,6 @@ export const Vditor = ({navigation}: Props) => {
     };
     navigation.setOptions({
       headerShown: true,
-      cardStyle: {backgroundColor: 'white'},
       header: headerBar,
     });
   }, [navigation]);

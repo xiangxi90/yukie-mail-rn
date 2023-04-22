@@ -16,10 +16,10 @@ export const mainScreens: Record<
   string,
   React.ComponentType<any> & {title: string}
 > = {
+  MailListScreen: MailListScreen,
   SettingScreen: SettingScreen,
   FirstUseOnboard: FirstUseOnboard,
   EditorScreen: Editor,
-  MailListScreen: MailListScreen,
   CalendarScreen: CalendarScreen,
 };
 

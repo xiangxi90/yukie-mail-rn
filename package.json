@@ -24,6 +24,7 @@
     "react-i18next": "^12.2.0",
     "react-native": "0.71.4",
     "react-native-big-calendar": "^3.4.1",
+    "react-native-device-info": "^10.6.0",
     "react-native-gesture-handler": "^2.9.0",
     "react-native-keyboard-aware-scroll-view": "^0.9.5",
     "react-native-keyboard-spacer": "^0.4.1",
