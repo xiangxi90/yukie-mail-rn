@@ -1,0 +1,62 @@
+2023-04-25T02:04:35.252073+08:00 INFO yukie_mail :init for log
+2023-04-25T02:04:35.255265600+08:00 WARN yukie_mail :warning message
+2023-04-25T02:04:35.255362400+08:00 ERROR yukie_mail :error message
+2023-04-25T02:06:22.489654900+08:00 INFO yukie_mail :init for log
+2023-04-25T02:06:22.492176100+08:00 DEBUG yukie_mail :debug info
+2023-04-25T02:06:22.492228700+08:00 WARN yukie_mail :warning message
+2023-04-25T02:06:22.492263500+08:00 ERROR yukie_mail :error message
+2023-04-25T02:07:53.666305400+08:00 INFO yukie_mail :init for log
+2023-04-25T02:07:53.668895200+08:00 DEBUG yukie_mail :debug info
+2023-04-25T02:07:53.668970500+08:00 WARN yukie_mail :warning message
+2023-04-25T02:07:53.669007400+08:00 ERROR yukie_mail :error message
+2023-04-25T02:07:53.669174500+08:00 INFO yukie_mail :fdsfds
+2023-04-25T02:09:56.411798300+08:00<INFO> yukie_mail::10 :init for log
+2023-04-25T02:09:56.414257700+08:00<DEBUG> yukie_mail::12 :debug info
+2023-04-25T02:09:56.414313500+08:00<WARN> yukie_mail::13 :warning message
+2023-04-25T02:09:56.414332400+08:00<ERROR> yukie_mail::14 :error message
+2023-04-25T02:09:56.414350600+08:00<INFO> yukie_mail::19 :fdsfds
+2023-04-25T02:11:29.766946900+08:00<INFO> yukie_mail::10 :init for log
+2023-04-25T02:11:29.770601300+08:00<DEBUG> yukie_mail::12 :debug info
+2023-04-25T02:11:29.770763200+08:00<WARN> yukie_mail::13 :warning message
+2023-04-25T02:11:29.770875300+08:00<ERROR> yukie_mail::14 :error message
+2023-04-25T02:11:29.770981+08:00<INFO> yukie_mail::19 :fdsfds
+2023-04-25T02:12:08.351255700+08:00<INFO> yukie_mail::10 :init for log
+2023-04-25T02:12:08.353676300+08:00<DEBUG> yukie_mail::12 :debug info
+2023-04-25T02:12:08.354071400+08:00<WARN> yukie_mail::13 :warning message
+2023-04-25T02:12:08.354405400+08:00<ERROR> yukie_mail::14 :error message
+2023-04-25T02:12:08.354822800+08:00<INFO> yukie_mail::19 :fdsfds
+2023-04-25T02:12:22.996406600+08:00<INFO> yukie_mail::10 :init for log
+2023-04-25T02:12:22.998805800+08:00<DEBUG> yukie_mail::12 :debug info
+2023-04-25T02:12:22.998937400+08:00<WARN> yukie_mail::13 :warning message
+2023-04-25T02:12:22.999070600+08:00<ERROR> yukie_mail::14 :error message
+2023-04-25T02:12:22.999244400+08:00<INFO> yukie_mail::19 :fdsfds
+2023-04-25T02:12:44.602300500+08:00<INFO> yukie_mail::10 :init for log
+2023-04-25T02:12:44.605347700+08:00<DEBUG> yukie_mail::12 :debug info
+2023-04-25T02:12:44.605476300+08:00<WARN> yukie_mail::13 :warning message
+2023-04-25T02:12:44.605574500+08:00<ERROR> yukie_mail::14 :error message
+2023-04-25T02:12:44.605673100+08:00<INFO> yukie_mail::19 :fdsfds
+2023-04-25T02:13:12.772136300+08:00<INFO> yukie_mail::10 :init for log
+2023-04-25T02:13:12.775285200+08:00<DEBUG> yukie_mail::12 :debug info
+2023-04-25T02:13:12.775483500+08:00<WARN> yukie_mail::13 :warning message
+2023-04-25T02:13:12.775903900+08:00<ERROR> yukie_mail::14 :error message
+2023-04-25T02:13:12.776497600+08:00<INFO> yukie_mail::19 :fdsfds
+2023-04-25T02:14:07.627761300+08:00<INFO> yukie_mail::10 :init for log
+2023-04-25T02:14:07.630946200+08:00<DEBUG> yukie_mail::12 :debug info
+2023-04-25T02:14:07.631183300+08:00<WARN> yukie_mail::13 :warning message
+2023-04-25T02:14:07.631612600+08:00<ERROR> yukie_mail::14 :error message
+2023-04-25T02:14:07.632063500+08:00<INFO> yukie_mail::19 :fdsfds
+2023-04-25T02:14:23.798600600+08:00<INFO> yukie_mail::10 :init for log
+2023-04-25T02:14:23.801815900+08:00<DEBUG> yukie_mail::12 :debug info
+2023-04-25T02:14:23.802127400+08:00<WARN> yukie_mail::13 :warning message
+2023-04-25T02:14:23.802621500+08:00<ERROR> yukie_mail::14 :error message
+2023-04-25T02:14:23.803188700+08:00<INFO> yukie_mail::19 :fdsfds
+2023-04-25T02:14:29.829464600+08:00<INFO> yukie_mail::10 :init for log
+2023-04-25T02:14:29.832659700+08:00<DEBUG> yukie_mail::12 :debug info
+2023-04-25T02:14:29.832976300+08:00<WARN> yukie_mail::13 :warning message
+2023-04-25T02:14:29.833399600+08:00<ERROR> yukie_mail::14 :error message
+2023-04-25T02:14:29.833940100+08:00<INFO> yukie_mail::19 :fdsfds
+2023-04-25T02:14:32.348046+08:00<INFO> yukie_mail::10 :init for log
+2023-04-25T02:14:32.350722500+08:00<DEBUG> yukie_mail::12 :debug info
+2023-04-25T02:14:32.350967+08:00<WARN> yukie_mail::13 :warning message
+2023-04-25T02:14:32.351317+08:00<ERROR> yukie_mail::14 :error message
+2023-04-25T02:14:32.351778200+08:00<INFO> yukie_mail::19 :fdsfds

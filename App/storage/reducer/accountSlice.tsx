@@ -6,21 +6,27 @@ const accountSlice = createSlice({
   initialState: {
     account: {
       name: '',
-      statue: 'Empty',
+      status: 'Empty',
       email_address: '',
       smtp_server: '',
       smtp_port: 993,
+      smtp_account: '',
       smtp_password: '',
       imap_server: '',
-      imap_port: 587,
+      imap_port: 443,
+      imap_account: '',
       imap_password: '',
     },
     isLoading: false,
     hasAccount: false,
+    threadItemMode: 'card',
   },
   reducers: {
     addAccount(state, action) {
       state.account = action.payload;
+    },
+    setThreadItemMode(state, action) {
+      state.threadItemMode = action.payload;
     },
   },
   extraReducers: builder => {
@@ -30,7 +36,7 @@ const accountSlice = createSlice({
     builder.addCase(fetchAccount.fulfilled, (state, action) => {
       state.isLoading = false;
       state.account = action.payload;
-      if (state.account.statue !== 'Empty') {
+      if (state.account.status !== 'Empty') {
         state.hasAccount = true;
       }
     });
@@ -45,6 +51,6 @@ export const fetchAccount = createAsyncThunk('account/fetch', async () => {
   return (await response.json()).data as Account;
 });
 
-export const {addAccount} = accountSlice.actions;
+export const {addAccount, setThreadItemMode} = accountSlice.actions;
 
 export default accountSlice.reducer;

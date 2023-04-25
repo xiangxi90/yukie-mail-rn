@@ -30,6 +30,8 @@ import {isWeb} from './utils';
 // import DrawerItems from './DrawerItems';
 import DrawerItems from './component/DrawerMenu';
 import Root from './RootNavigation';
+import {useAppDispatch} from './hooks';
+import {setThreadItemMode} from './storage/reducer/accountSlice';
 ///-----------------------------------///
 
 const PERSISTENCE_KEY = 'NAVIGATION_STATE';
@@ -79,6 +81,8 @@ const MailApp = () => {
 
   const themeMode = isDarkMode ? 'dark' : 'light';
 
+  const dispatch = useAppDispatch();
+
   const theme = {
     2: {
       light: MD2LightTheme,
@@ -91,6 +95,7 @@ const MailApp = () => {
   }[themeVersion][themeMode];
   theme.fonts = fontConfig;
 
+  const [threadMode, setThreadMode] = React.useState<'card' | 'normal'>('card');
   React.useEffect(() => {
     const restoreState = async () => {
       try {
@@ -125,6 +130,8 @@ const MailApp = () => {
           if (typeof preferences.rtl === 'boolean') {
             setRtl(preferences.rtl);
           }
+          setThreadMode(preferences.threadMode);
+          dispatch(setThreadItemMode(preferences.threadMode));
         }
       } catch (e) {
         // ignore error
@@ -142,6 +149,7 @@ const MailApp = () => {
           JSON.stringify({
             theme: themeMode,
             rtl,
+            threadMode: threadMode,
           }),
         );
       } catch (e) {
@@ -154,7 +162,7 @@ const MailApp = () => {
     };
 
     savePrefs();
-  }, [rtl, themeMode]);
+  }, [rtl, themeMode, threadMode]);
 
   const preferences = React.useMemo(
     () => ({
@@ -167,12 +175,15 @@ const MailApp = () => {
         setCollapsed(false);
         setThemeVersion(oldThemeVersion => (oldThemeVersion === 2 ? 3 : 2));
       },
+      toggleThreadMode: () =>
+        setThreadMode(threadMode === 'card' ? 'normal' : 'card'),
       customFontLoaded,
       collapsed,
       rtl,
       theme,
+      threadMode,
     }),
-    [rtl, theme, collapsed, customFontLoaded],
+    [rtl, theme, collapsed, customFontLoaded, threadMode],
   );
 
   if (!isReady) {

@@ -32,7 +32,7 @@ pub unsafe extern "C" fn Java_com_yukie_1mail_1rn_YukieMailBridge_init(
 pub unsafe extern "C" fn Java_com_yukie_1mail_1rn_YukieMailBridge_invoke_async(
     mut env: JNIEnv,
     _: JClass,
-    name: JString,
+    payload: JString,
 ) -> jstring {
     let name: String = env.get_string(&name).unwrap().into();
     let response = format!("Hello {}!", name);

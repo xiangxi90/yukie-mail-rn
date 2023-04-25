@@ -7,3 +7,4 @@ export const settingIcon = Ionicons.getImageSourceSync(
   'white',
 );
 export const draftIcon = MaterialIcons.getImageSourceSync('drafts');
+export const backIcon = Ionicons.getImageSourceSync('arrow-back', 30);

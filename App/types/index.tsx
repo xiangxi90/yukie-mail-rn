@@ -24,16 +24,21 @@ export type Content = {
   name: string;
 };
 
+export type mail_protocal = 'SSL/TLS' | 'StartTls' | 'None';
 export type Account = {
   name: string;
-  statue: 'Success' | 'Empty' | 'Expired';
+  status: 'Success' | 'Empty' | 'Expired';
   email_address: string;
   smtp_server: string;
+  smtp_account: string;
   smtp_port: number;
   smtp_password: string;
+  smtp_protocol: mail_protocal;
   imap_server: string;
   imap_port: number;
+  imap_account: string;
   imap_password: string;
+  imap_protocol: mail_protocal;
 };
 
 export type Message = {

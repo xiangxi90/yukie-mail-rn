@@ -3,7 +3,7 @@ import {StackNavigationProp} from '@react-navigation/stack';
 import * as React from 'react';
 import {NativeScrollEvent, NativeSyntheticEvent} from 'react-native';
 import {Animated, FlatList, Platform, StyleSheet, View} from 'react-native';
-import {Badge, Card, FAB} from 'react-native-paper';
+import {Badge, Banner, Card, FAB, TouchableRipple} from 'react-native-paper';
 import {
   Appbar,
   Avatar,
@@ -18,8 +18,8 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {useGlobalTheme} from '../../app';
 import {animatedFABExampleData} from '../../utils';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
-import {settingIcon} from '../../component/icons/basicIcons';
-
+import {backIcon, settingIcon} from '../../component/icons/basicIcons';
+import {PreferencesContext} from '../../app';
 type Item = {
   id: string;
   sender: string;
@@ -38,6 +38,7 @@ type Props = {
 };
 
 const MailListScreen = ({navigation}: Props) => {
+  const preferences = React.useContext(PreferencesContext);
   const {colors, isV3} = useGlobalTheme();
 
   const height = isV3 ? 80 : 56;
@@ -47,6 +48,7 @@ const MailListScreen = ({navigation}: Props) => {
 
   const [extended, setExtended] = React.useState<boolean>(false);
   const [visible, setVisible] = React.useState<boolean>(false);
+  const [bannerVisible, setBannerVisible] = React.useState(true);
 
   const [_threadModalVisible, setThreadModalVisible] =
     React.useState<boolean>(false);
@@ -58,6 +60,9 @@ const MailListScreen = ({navigation}: Props) => {
   );
 
   const [selectedMessage, setSelectedMessage] = React.useState<Item>();
+  const [cardMode, setCardMode] = React.useState(
+    preferences.threadMode === 'card',
+  );
 
   React.useLayoutEffect(() => {
     navigation.setOptions({
@@ -65,14 +70,17 @@ const MailListScreen = ({navigation}: Props) => {
     });
   }, [navigation]);
 
-  const renderItem = React.useCallback(
+  const renderCardItem = React.useCallback(
     ({item}: {item: Item}) => {
       const TextComponent = isV3 ? Text : Paragraph;
 
       return (
         <>
           <Card
-            style={styles.card}
+            style={{
+              ...styles.card,
+              backgroundColor: item.read ? colors.background : colors.surface,
+            }}
             mode="elevated"
             onPress={() => {
               console.log('hello');
@@ -111,14 +119,14 @@ const MailListScreen = ({navigation}: Props) => {
               )}
             />
             <Card.Content>
-              <View style={styles.itemContainer}>
+              <View style={styles.cardItemContainer}>
                 <TextComponent
                   variant="labelLarge"
                   numberOfLines={2}
                   ellipsizeMode="tail">
                   {item.message}
                 </TextComponent>
-                <View style={styles.itemTextContentContainer}>
+                <View style={{...styles.itemIconContentContainer, margin: 5}}>
                   <TextComponent
                     variant="labelLarge"
                     numberOfLines={1}
@@ -126,7 +134,7 @@ const MailListScreen = ({navigation}: Props) => {
                     {item.date}
                   </TextComponent>
                 </View>
-                <View style={styles.itemTextContentContainer}>
+                <View style={styles.itemIconContentContainer}>
                   <Icon
                     name={item.favorite ? 'star' : 'star-outline'}
                     color={
@@ -167,6 +175,96 @@ const MailListScreen = ({navigation}: Props) => {
     [isV3, navigation],
   );
 
+  const renderItem = React.useCallback(
+    ({item}: {item: Item}) => {
+      const TextComponent = isV3 ? Text : Paragraph;
+
+      return (
+        <TouchableRipple
+          style={styles.ripple}
+          onPress={() => {
+            console.log('hello');
+            navigation.navigate('EditorScreen');
+          }}
+          rippleColor="rgba(0, 0, 0, .32)">
+          <View style={styles.itemContainer}>
+            <Avatar.Text
+              style={[styles.avatar, {backgroundColor: item.bgColor}]}
+              label={item.initials}
+              color={isV3 ? MD3Colors.primary100 : MD2Colors.white}
+              size={40}
+            />
+            <View style={styles.itemTextContentContainer}>
+              <View style={styles.itemHeaderContainer}>
+                <TextComponent
+                  variant="labelLarge"
+                  style={[styles.header, !item.read && styles.read]}
+                  ellipsizeMode="tail"
+                  numberOfLines={1}>
+                  {item.sender}
+                </TextComponent>
+                <TextComponent
+                  variant="labelLarge"
+                  style={[styles.date, !item.read && styles.read]}>
+                  {item.date}
+                </TextComponent>
+              </View>
+
+              <View style={styles.itemMessageContainer}>
+                <View style={styles.flex}>
+                  <TextComponent
+                    variant="labelLarge"
+                    ellipsizeMode="tail"
+                    numberOfLines={1}
+                    style={!item.read && styles.read}>
+                    {item.header}
+                  </TextComponent>
+                  <TextComponent
+                    variant="labelLarge"
+                    numberOfLines={1}
+                    ellipsizeMode="tail">
+                    {item.message}
+                  </TextComponent>
+                </View>
+
+                <Icon
+                  name={item.favorite ? 'star' : 'star-outline'}
+                  color={
+                    item.favorite
+                      ? isV3
+                        ? MD3Colors.error70
+                        : MD2Colors.orange500
+                      : isV3
+                      ? MD3Colors.neutralVariant70
+                      : MD2Colors.grey500
+                  }
+                  size={20}
+                  onPress={() => setVisible(!visible)}
+                  style={styles.icon}
+                />
+
+                <Badge
+                  visible={true}
+                  size={20}
+                  style={[
+                    styles.cardBadge,
+                    {
+                      backgroundColor: isV3
+                        ? MD3Colors.neutral60
+                        : MD2Colors.blue500,
+                    },
+                  ]}>
+                  99+
+                </Badge>
+              </View>
+            </View>
+          </View>
+        </TouchableRipple>
+      );
+    },
+    [isV3, visible, navigation],
+  );
+
   const onScroll = ({nativeEvent}: NativeSyntheticEvent<NativeScrollEvent>) => {
     const currentScrollPosition =
       Math.floor(nativeEvent?.contentOffset?.y) ?? 0;
@@ -183,9 +281,37 @@ const MailListScreen = ({navigation}: Props) => {
 
   return (
     <>
+      <Banner
+        actions={[
+          {
+            label: '切换一下',
+            onPress: () => {
+              preferences.toggleThreadMode();
+              setCardMode(!cardMode);
+            },
+          },
+          {
+            label: '下次吧',
+            onPress: () => setBannerVisible(false),
+          },
+        ]}
+        icon="bell"
+        visible={bannerVisible}
+        onShowAnimationFinished={() =>
+          console.log('Completed opening animation')
+        }
+        onHideAnimationFinished={() =>
+          console.log('Completed closing animation')
+        }>
+        <View style={styles.textComponent}>
+          <Text variant="labelLarge" numberOfLines={2} ellipsizeMode="tail">
+            尝试试一下我们的另外一种布局风格？{'\n'}或者也可以稍后在设置中切换
+          </Text>
+        </View>
+      </Banner>
       <FlatList
         data={animatedFABExampleData}
-        renderItem={renderItem}
+        renderItem={cardMode ? renderCardItem : renderItem}
         keyExtractor={_keyExtractor}
         onEndReachedThreshold={0}
         scrollEventThrottle={16}
@@ -228,7 +354,18 @@ const MailListScreen = ({navigation}: Props) => {
           icon={extended ? 'star' : 'star-outline'}
           actions={[
             {
-              icon: 'star',
+              icon: backIcon,
+              label: 'Go Back',
+              onPress: () => {
+                if (navigation.canGoBack()) {
+                  navigation.goBack();
+                } else {
+                  navigation.navigate('MailListScreen');
+                }
+              },
+            },
+            {
+              icon: 'magnify',
               label: 'Search',
               onPress: () => {
                 console.log('search');
@@ -284,11 +421,20 @@ const styles = StyleSheet.create({
   flex: {
     flex: 1,
   },
-  itemContainer: {
+  cardItemContainer: {
     marginBottom: 16,
     flexDirection: 'column',
   },
+  itemContainer: {
+    marginBottom: 16,
+    flexDirection: 'row',
+    flex: 1,
+  },
   itemTextContentContainer: {
+    flexDirection: 'column',
+    flex: 1,
+  },
+  itemIconContentContainer: {
     flexDirection: 'row',
     justifyContent: 'flex-end',
     //flex: 1,
@@ -345,6 +491,11 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: 5,
   },
+  cardBadge: {
+    position: 'absolute',
+    top: 4,
+    right: 0,
+  },
   ripple: {
     flex: 1,
     alignItems: 'center',
@@ -354,6 +505,11 @@ const styles = StyleSheet.create({
     margin: 4,
     marginLeft: 0,
     marginRight: 0,
+  },
+  textComponent: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    margin: 10,
   },
 });
 MailListScreen.title = 'maillist';

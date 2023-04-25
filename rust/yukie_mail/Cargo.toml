@@ -1,9 +1,22 @@
 [package]
 name = "yukie_mail"
 version = "0.1.0"
+authors = ["Kuze Hibiki"]
+readme = "README.md"
+description = "Email Worker for RN fe"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+# common
 diesel = { version = "2.0.0", features = ["sqlite"] }
+serde = { version = "1.0", features = ["derive"] }
+tokio = { version = "1.27.0", features  = ["full"]}
+# log
+log = "0.4.17"
+log4rs = "1.2.0"
+# smtp
+lettre = { version = "0.10.4"}
+# imap
+async-imap = { version = '0.8.0', features = ["tokio"]}

@@ -1,11 +1,13 @@
 import * as React from 'react';
-import {Platform, StyleSheet, View} from 'react-native';
+import {Alert, Platform, StyleSheet, View} from 'react-native';
 
 import type {StackNavigationProp} from '@react-navigation/stack';
 import {
   Appbar,
+  Button,
   List,
   Paragraph,
+  Portal,
   RadioButton,
   Switch,
   Text,
@@ -15,6 +17,7 @@ import {
 import {PreferencesContext, useGlobalTheme} from '../../app';
 import {yellowA200} from 'react-native-paper/src/styles/themes/v2/colors';
 import ScreenWrapper from '../../ScreenWrapper';
+import DialogWithLoadingIndicator from '../../component/Dialog/DialogWithLoadingIncicator';
 
 type Props = {
   navigation: StackNavigationProp<{[key: string]: undefined}>;
@@ -33,6 +36,9 @@ const SettingScreen = ({navigation}: Props) => {
   const [showCalendarIcon, setShowCalendarIcon] = React.useState(false);
   const [showElevated, setShowElevated] = React.useState(false);
   const [darkMode, setDarkMode] = React.useState(preferences.theme.dark);
+  const isCardMode = preferences.threadMode === 'card';
+  const [cardMode, setCardMode] = React.useState(isCardMode);
+  const [alertVisible, setAlertVisible] = React.useState(false);
   const theme = useGlobalTheme();
 
   const isCenterAlignedMode = appbarMode === 'center-aligned';
@@ -104,6 +110,9 @@ const SettingScreen = ({navigation}: Props) => {
         ) : (
           renderDefaultOptions()
         )}
+        <Button onPress={() => navigation.navigate('LoginScreen')}>
+          跳转登录
+        </Button>
         {theme.isV3 && (
           <List.Section title="Appbar Modes">
             <RadioButton.Group
@@ -140,6 +149,21 @@ const SettingScreen = ({navigation}: Props) => {
             }}
           />
         </View>
+        <View style={styles.row}>
+          <TextComponent>CardMode</TextComponent>
+          <Switch
+            value={cardMode}
+            onValueChange={() => {
+              setAlertVisible(true);
+              preferences.toggleThreadMode();
+              navigation.replace('MailListScreen');
+            }}
+          />
+        </View>
+        <DialogWithLoadingIndicator
+          visible={alertVisible}
+          close={() => setAlertVisible(false)}
+        />
       </ScreenWrapper>
     </>
   );

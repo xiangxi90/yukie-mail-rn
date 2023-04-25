@@ -10,9 +10,7 @@ import {
 } from '@react-navigation/stack';
 import {Appbar} from 'react-native-paper';
 
-import ScreenList, {screens} from './ScreenList';
-import {useAppDispatch, useAppSelector} from './hooks';
-import accountSlice, {fetchAccount} from './storage/reducer/accountSlice';
+import {screens} from './ScreenList';
 const Stack = createStackNavigator();
 
 const Root = () => {
@@ -20,7 +18,6 @@ const Root = () => {
     Platform.OS === 'android'
       ? CardStyleInterpolators.forFadeFromBottomAndroid
       : CardStyleInterpolators.forHorizontalIOS;
-  const {account} = useAppSelector(state => state.account);
   return (
     <Stack.Navigator
       screenOptions={({navigation}) => {
