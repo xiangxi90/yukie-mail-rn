@@ -1,5 +1,5 @@
 import React from 'react';
-import {Platform, StyleSheet, View} from 'react-native';
+import {Platform, StyleSheet} from 'react-native';
 import WebView, {WebViewMessageEvent} from 'react-native-webview';
 
 type Props = {
@@ -28,7 +28,7 @@ export const Vditor = ({init_text, init_theme}: Props) => {
   return (
     <WebView
       ref={_webViewRef}
-      style={{flex: 1}}
+      style={styles.container}
       source={
         Platform.OS === 'ios'
           ? require('../../../assets/html/editor.html')

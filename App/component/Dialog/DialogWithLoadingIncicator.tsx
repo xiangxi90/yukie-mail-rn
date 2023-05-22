@@ -19,7 +19,7 @@ const DialogWithLoadingIndicator = ({
   return (
     <Portal>
       <Dialog onDismiss={close} visible={visible}>
-        <Dialog.Title>Progress Dialog</Dialog.Title>
+        <Dialog.Title>注意</Dialog.Title>
         <Dialog.Content>
           <View style={styles.flexing}>
             <ActivityIndicator

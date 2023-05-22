@@ -84,7 +84,7 @@ const MailListScreen = ({navigation}: Props) => {
             mode="elevated"
             onPress={() => {
               console.log('hello');
-              navigation.push('EditorScreen');
+              navigation.push('MailReadScreen');
             }}
             onLongPress={() => {
               setSelectedMessage(item);
@@ -184,7 +184,7 @@ const MailListScreen = ({navigation}: Props) => {
           style={styles.ripple}
           onPress={() => {
             console.log('hello');
-            navigation.navigate('EditorScreen');
+            navigation.push('MailReadScreen');
           }}
           rippleColor="rgba(0, 0, 0, .32)">
           <View style={styles.itemContainer}>

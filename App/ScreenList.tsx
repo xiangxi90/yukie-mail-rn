@@ -12,6 +12,7 @@ import {Editor} from './screens/EditScreen';
 import {MailListScreen} from './screens/MailListScreen';
 import {CalendarScreen} from './screens/CalendarScreen';
 import {LoginScreen} from './screens/LoginScreen/login';
+import MailReadScreen from './screens/MailReadScreen';
 // 在这里注册界面
 export const mainScreens: Record<
   string,
@@ -23,6 +24,7 @@ export const mainScreens: Record<
   EditorScreen: Editor,
   CalendarScreen: CalendarScreen,
   LoginScreen: LoginScreen,
+  MailReadScreen: MailReadScreen,
 };
 
 export const nestedScreens: Record<

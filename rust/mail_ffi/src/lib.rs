@@ -1,3 +1,4 @@
+// #[cfg(target_os = "android")]
 #[cfg(feature = "jni")]
 pub mod android_ffi;
 #[cfg(feature = "ffi")]

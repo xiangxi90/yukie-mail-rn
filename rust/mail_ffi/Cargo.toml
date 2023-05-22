@@ -11,7 +11,15 @@ crate-type = ["staticlib","cdylib"]
 [dependencies]
 dotenvy = "0.15.7"
 libc = "0.2.140" 
+log = "0.4.17"
 jni = {version = "0.21.0",optional = true,default-features = false}
-
+anyhow = "1.0.70"
+yukie_mail = { path = "../yukie_mail"}
+prost = "0.11.9"
+# tokio = { version = "1.27.0", features  = ["full"]}
+libsqlite3-sys = { version = "0.26.0", features = ["bundled"] }
 [features]
-# default = ["jni"]
+default = ["jni"]
+
+[build-dependencies]
+prost-build = "0.11.9"

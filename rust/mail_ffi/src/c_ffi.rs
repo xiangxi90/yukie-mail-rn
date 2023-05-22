@@ -1,4 +1,3 @@
-extern crate libc;
 use string::StringPtr;
 
 #[no_mangle]

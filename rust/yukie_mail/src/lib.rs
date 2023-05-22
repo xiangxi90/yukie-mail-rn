@@ -1,14 +1,18 @@
-pub fn add(left: usize, right: usize) -> usize {
-    left + right
-}
+#[macro_use]
+extern crate lazy_static;
 
-#[cfg(test)]
-mod tests {
-    use super::*;
+pub mod db;
+pub mod imap;
+pub mod proto;
+pub mod smtp;
+pub mod utils;
 
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
-    }
-}
+mod models;
+mod schema;
+
+#[cfg(not(target_os = "windows"))]
+pub mod client;
+#[cfg(not(target_os = "windows"))]
+pub mod server;
+#[cfg(not(target_os = "windows"))]
+pub mod tonic_server;

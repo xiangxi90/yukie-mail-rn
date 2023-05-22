@@ -163,11 +163,15 @@ export const CalendarScreen = ({navigation}: Props) => {
                 dispatch(
                   addCalendar({
                     title: outlinedDenseText,
-                    start: new Date(now.getTime()),
+                    start: new Date(
+                      new Date(now).setHours(0, 0, 0, 0) +
+                        startDayTime.hours * 3600000 +
+                        startDayTime.minutes * 60000,
+                    ),
                     end: new Date(
-                      now.getTime() +
-                        3600 * endDayTime.hours +
-                        60 * endDayTime.minutes,
+                      new Date(now).setHours(0, 0, 0, 0) +
+                        endDayTime.hours * 3600000 +
+                        endDayTime.minutes * 60000,
                     ),
                   }),
                 );

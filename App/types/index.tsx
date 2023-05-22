@@ -45,12 +45,19 @@ export type Message = {
   id: string;
   labels: string[];
   subject: string;
-  from: string;
-  to: string[];
-  cc?: string[];
-  bcc?: string[];
+  from: MailAdrress;
+  to: MailAdrress[];
+  cc?: MailAdrress[];
+  bcc?: MailAdrress[];
   body: string;
-  content?: Content; // 存储文件地址
+  content?: Content[]; // 存储文件地址
+  flaged?: Boolean;
+  time?: number;
+};
+
+export type MailAdrress = {
+  name: string;
+  address: string;
 };
 
 export type Thread = {
