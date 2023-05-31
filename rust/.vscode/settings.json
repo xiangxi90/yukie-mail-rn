@@ -1,5 +1,0 @@
-{
-    "rust-analyzer.linkedProjects": [
-        ".\\mail_ffi\\Cargo.toml"
-    ]
-}

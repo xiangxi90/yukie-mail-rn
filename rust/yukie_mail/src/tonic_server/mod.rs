@@ -98,7 +98,9 @@ impl MailAccount for MailAccountService {
 pub fn start_server(
     thread_nums: usize,
     socket_path: &str,
-) -> Result<(), Box<dyn std::error::Error>> {
+) -> anyhow::Result<()> {
+    server_log::init_log_server();
+    debug!("[Yukie mail server]start init server");
     tokio::runtime::Builder::new_multi_thread()
         .worker_threads(thread_nums)
         .enable_all()
@@ -107,8 +109,10 @@ pub fn start_server(
         .block_on(start(socket_path))
 }
 
-pub async fn start(socket_path: &str) -> Result<(), Box<dyn std::error::Error>> {
-    server_log::init_log_server();
+/// 从android启动由于jvm的原因，
+/// 需额外维护一份运行时，并调用该函数
+pub async fn start(socket_path: &str) -> anyhow::Result<()> {
+    debug!("[Yukie mail server] start init socket");
     // 开始前先保证文件不存在，避免绑定错误
     tokio::fs::remove_file(socket_path).await.ok();
 
@@ -122,6 +126,6 @@ pub async fn start(socket_path: &str) -> Result<(), Box<dyn std::error::Error>> 
         .add_service(MailAccountServer::new(account_service))
         .serve_with_incoming(uds_stream)
         .await?;
-
+    debug!("[Yukie mail server] server start success");
     Ok(())
 }

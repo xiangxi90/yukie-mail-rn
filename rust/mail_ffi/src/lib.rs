@@ -1,10 +1,15 @@
 // #[cfg(target_os = "android")]
-#[cfg(feature = "jni")]
+#[cfg(feature = "android_jni")]
 pub mod android_ffi;
+#[cfg(feature = "android_jni")]
+pub(crate) mod bridge;
+
 #[cfg(feature = "ffi")]
 pub mod c_ffi;
-mod string;
-mod uds;
+#[macro_use]
+pub(crate) mod logger;
+pub(crate) mod string;
+pub(crate) mod uds;
 
 // string ffi
 #[cfg(test)]

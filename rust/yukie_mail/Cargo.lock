@@ -2433,6 +2433,7 @@ dependencies = [
  "log4rs",
  "mailparse",
  "native-tls",
+ "num_cpus",
  "openssl",
  "prost",
  "prost-build",

@@ -32,9 +32,18 @@ type Item = {
   bgColor: string;
 };
 
+type StackParamList = {
+  Home: undefined;
+  MailReadScreen: {message_ids: string[]; label_id: string};
+  Feed: {sort: 'latest' | 'top'} | undefined;
+  CalendarScreen: undefined;
+  SettingScreen: undefined;
+  EditorScreen: undefined;
+  MailListScreen: undefined;
+};
+
 type Props = {
-  navigation: StackNavigationProp<{[key: string]: undefined}>;
-  title: string;
+  navigation: StackNavigationProp<StackParamList, 'MailReadScreen'>;
 };
 
 const MailListScreen = ({navigation}: Props) => {
@@ -84,7 +93,10 @@ const MailListScreen = ({navigation}: Props) => {
             mode="elevated"
             onPress={() => {
               console.log('hello');
-              navigation.push('MailReadScreen');
+              navigation.push('MailReadScreen', {
+                message_ids: [item.id],
+                label_id: item.sender,
+              });
             }}
             onLongPress={() => {
               setSelectedMessage(item);
@@ -184,7 +196,10 @@ const MailListScreen = ({navigation}: Props) => {
           style={styles.ripple}
           onPress={() => {
             console.log('hello');
-            navigation.push('MailReadScreen');
+            navigation.push('MailReadScreen', {
+              message_ids: [item.id],
+              label_id: item.sender,
+            });
           }}
           rippleColor="rgba(0, 0, 0, .32)">
           <View style={styles.itemContainer}>

@@ -1,91 +1,48 @@
 package com.yukie_mail_rn;
 
+import android.content.Context;
 import android.util.Log;
-
-import javax.print.DocFlavor.BYTE_ARRAY;
 
 import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
+import com.yukie_mail_rn.rust_service.RustBridge;
 
+import kotlin.UByteArray;
+
+// 该模块用于暴露出给React Native 调用的接口，目前只需要调用invoke即可
+// 使用时传入command对应command id以及request pb化数据
+// 返回对应response 的pb数据
 public class YukieMailBridge extends ReactContextBaseJavaModule {
-    static {
-        System.loadLibrary("mail_ffi");
-    }
 
     @Override
     public String getName() {
         return "YukieMailBridge";
     }
 
+    public static RustBridge bridge = new RustBridge();
+
     public YukieMailBridge(ReactApplicationContext reactContext) {
         super(reactContext);
     }
 
     @ReactMethod
-    public void sayHelloWorld(String name, Promise promise) {
-        Log.d("Rust_LIB", "===say_hello===");
-        promise.resolve(helloWorld(name));
+    public byte[] invoke(int commandId, UByteArray payloadString) {
+        Log.d("Rust_LIB", String.format("invoke rust %d:%s", commandId, payloadString));
+        return bridge.invoke(commandId, payloadString, "/data/data/com.yukie_mail_rn/mail_server.socket");
     }
 
     @ReactMethod
-    public void createAppWorker(String userId) {
-        if (!createWorker(userId)) {
-            Log.d("Rust_LIB", "<<Monitor created failed>>");
-        } else {
-            Log.d("Rust_LIB", "<<Monitor created success>>");
-        }
-        if (!connectToWorker()) {
-            Log.d("Rust_LIB", "<<Connect To Monitor failed>>");
-        } else {
-            Log.d("Rust_LIB", "<<Connect To Monitor success>>");
-        }
-    }
-
-    @ReactMethod
-    public byte[] invoke(int commandId, byte[] payloadString) {
-        Log.d("Rust_LIB", String.format("invoke rust %d", commandId));
-        return invokeWorker(commandId, payloadString);
-    }
-
-    @ReactMethod
-    public String asyncInvoke(int commandId, String payloadString) {
+    public void asyncInvoke(int commandId, UByteArray payloadString, Promise promise) {
         Log.d("Rust_LIB", String.format("async invoke rust %d:%s", commandId, payloadString));
-        return invokeWorker(commandId, payloadString);
+        try {
+            byte[] resp = bridge.invoke(commandId, payloadString, "/data/data/com.yukie_mail_rn/mail_server.socket");
+            promise.resolve(resp);
+        } catch (Exception e) {
+            Log.w("Rust_Lib",e.getMessage());
+            promise.reject("Invoke Failed", e);
+        }
     }
 
-    private static native String helloWorld(String seed);
-
-    /**
-     * Native方法，创建一个rust子进程.
-     *
-     * @param userId
-     *               当前进程的用户ID,子进程重启当前进程时需要用到当前进程的用户ID.
-     * @return 如果子进程创建成功返回true，否则返回false
-     */
-    private native boolean createWorker(String userId);
-
-    /**
-     * Native方法，让当前进程连接到rust进程.
-     *
-     * @return 连接成功返回true，否则返回false
-     */
-    private native boolean connectToWorker();
-
-    /**
-     * Native方法，让当前进程连接到rust进程.
-     * sync方式
-     *
-     * @return 连接成功返回true，否则返回false
-     */
-    private native byte[] invokeWorker(int commandId, byte[] payloadString);
-
-    /**
-     * Native方法，让当前进程连接到rust进程.
-     * async方式
-     *
-     * @return 连接成功返回true，否则返回false
-     */
-    private native String asyncInvokeWorker(int commandId, String payloadString);
 }

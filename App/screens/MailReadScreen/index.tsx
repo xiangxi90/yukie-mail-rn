@@ -7,6 +7,8 @@ import type {RouteProp} from '@react-navigation/native';
 import type {Message, Content} from '../../types';
 import {mock_message_body} from './data';
 import {useGlobalTheme} from '../../app';
+import {command} from '../../types/command';
+import {async_invoke, invoke} from '../../utils/bridge';
 // import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {
   Appbar,
@@ -33,7 +35,7 @@ import {ScrollView} from 'react-native-gesture-handler';
 import {MailReader} from './reader';
 type StackParamList = {
   Home: undefined;
-  MailReadScreen: {message_id: string};
+  MailReadScreen: {message_ids: string[]; label_id: string};
   Feed: {sort: 'latest' | 'top'} | undefined;
 };
 
@@ -46,12 +48,13 @@ type AppbarModes = 'small' | 'medium' | 'large' | 'center-aligned';
 const MORE_ICON = Platform.OS === 'ios' ? 'dots-horizontal' : 'dots-vertical';
 
 const default_message = {
-  id: '',
-  labels: [],
-  subject: 'empty',
-  from: 'empty',
-  to: [],
-  body: '',
+  id: 'dsafdsad',
+  labels: ['INBOX'],
+  subject: '推销-app',
+  from: {name: 'kuze', address: 'sddad@126.com'},
+  to: [{name: 'hibiki', address: 'hibiki@126.com'}],
+  body: mock_message_body(),
+  flaged: true,
 };
 
 const MailScreenReader = ({navigation}: Props) => {
@@ -151,9 +154,19 @@ const MailScreenReader = ({navigation}: Props) => {
   const route = useRoute<ProfileScreenRouteProp>();
 
   React.useEffect(() => {
-    let e_message = get_message_by_message_id(route.params?.message_id);
-    setMessage(e_message);
-  }, [route.params?.message_id]);
+    function get_message() {
+      try {
+        let e_message = get_message_by_message_id(
+          route.params?.message_ids,
+          route.params?.label_id,
+        );
+        setMessage(e_message);
+      } catch (e) {
+        console.log(e);
+      }
+    }
+    get_message();
+  }, [route.params?.label_id, route.params?.message_ids]);
 
   return (
     <ScrollView overScrollMode="never">
@@ -168,12 +181,16 @@ const MailScreenReader = ({navigation}: Props) => {
             left={props => <Avatar.Icon {...props} icon="format-paint" />}
           /> */}
           <List.Accordion
-            title={message.from}
-            description={message.to.join('、')}
+            title={message.from.name}
+            description={message.to
+              ?.map(t => {
+                return t.name;
+              })
+              .join('、')}
             left={_props => (
               <Avatar.Text
                 style={[styles.avatar]}
-                label={message.from.charAt(0)}
+                label={message.from.name.charAt(0)}
                 color={MD3Colors.primary100}
                 size={40}
               />
@@ -181,25 +198,45 @@ const MailScreenReader = ({navigation}: Props) => {
             <View style={styles.rowContainer}>
               <Text style={styles.boaderText}>{'发件人'}</Text>
               <Text>{'  '}</Text>
-              <Text>{message.from}</Text>
+              <Text>
+                {message.from.name + '<' + message.from.address + '>'}
+              </Text>
             </View>
             <View style={styles.rowContainer}>
               <Text style={styles.boaderText}>{'收件人'}</Text>
               <Text>{'  '}</Text>
-              <Text>{message.to.join('、')}</Text>
+              <Text>
+                {message.to
+                  .map(function (addr) {
+                    addr.name + '<' + addr.address + '>';
+                  })
+                  .join('、')}
+              </Text>
             </View>
             {message.cc && message.cc.length > 0 && (
               <View style={styles.rowContainer}>
                 <Text style={styles.boaderText}>{'抄送'}</Text>
                 <Text>{'  '}</Text>
-                <Text>{message.cc?.join('、')}</Text>
+                <Text>
+                  {message.cc
+                    ?.map(function (addr) {
+                      addr.name + '<' + addr.address + '>';
+                    })
+                    .join('、')}
+                </Text>
               </View>
             )}
             {message.bcc && message.bcc.length > 0 && (
               <View style={styles.rowContainer}>
                 <Text style={styles.boaderText}>{'密送'}</Text>
                 <Text>{'  '}</Text>
-                <Text>{message.bcc?.join('、')}</Text>
+                <Text>
+                  {message.bcc
+                    ?.map(function (addr) {
+                      addr.name + '<' + addr.address + '>';
+                    })
+                    .join('、')}
+                </Text>
               </View>
             )}
             <View style={styles.rowContainer}>
@@ -252,26 +289,51 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
 });
-function get_message_by_message_id(message_id: string): Message {
-  const content: Content = {
-    type: 'file',
-    path: 'fdsfds/fdsfd',
-    name: 'test.pdf',
-  };
-  const message = {
-    id: message_id,
-    labels: ['INBOX', 'FLAGED'],
-    subject: '[推广]新天气应用',
-    from: 'chenjialu2001@outlook.com',
-    to: ['2651171386@qq.com'],
-    cc: ['sadsadsa@ewr.com', 'fdsfdsf@fdsfd.com'],
-    body: mock_message_body(),
-    content: [content],
-    flaged: false,
-    time: new Date().getTime(),
-  };
-  // console.log(message);
-  return message;
+function get_message_by_message_id(
+  message_ids: string[],
+  label_id: string,
+): Message {
+  console.log(message_ids);
+  let request = command.GetMailMessageRequest.fromObject({
+    message_id: message_ids,
+    label: label_id,
+  }).serialize();
+
+  // let msgs = command.GetMailMessageResponse.deserialize(
+  //   invoke(10004, request),
+  // ).message_full;
+
+  let msgs = command.GetMailMessageResponse.deserialize(
+    invoke(10003, request),
+  ).message_full;
+
+  let messages = msgs.map(function (m) {
+    const content: Content = {
+      type: 'file',
+      path: 'fdsfds/fdsfd',
+      name: 'test.pdf',
+    };
+    let message: Message = {
+      id: m.id,
+      labels: m.labels,
+      subject: m.message_info.subject,
+      from: m.message_info.from,
+      to: m.message_info.to,
+      cc: m.message_info.cc,
+      body: m.body,
+      content: [content],
+      flaged: m.message_info.flaged,
+      time: new Date().getTime(),
+    };
+    return message;
+  });
+  let msg = messages.pop();
+  if (msg) {
+    return msg;
+  } else {
+    return default_message;
+  }
 }
+
 MailScreenReader.title = 'hello';
 export default MailScreenReader;
